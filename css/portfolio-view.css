@@ -1,0 +1,604 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #fcfcfc;
+  font-family: "Open Sans";
+  font-style: normal;
+}
+
+:root {
+  --dark: #1f1f1f;
+  --white: #fff;
+  --blue: #332694;
+  --yellow: #ff8a26;
+  --red: #ff481f;
+  --red-yellow-gradient: linear-gradient(270deg, #ff8a26 0%, #ff481f 74.08%);
+  --card-bg: rgba(10, 38, 64, 0.04);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 80%;
+}
+
+.header .topNav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  isolation: isolate;
+  position: relative;
+}
+.header .topNav > img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.header .topNav > .blackCover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--dark);
+  opacity: 0.72;
+}
+.header .topNav > .textWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.header .topNav > .textWrap .texts {
+  position: absolute;
+  bottom: 28px;
+  background: transparent;
+}
+.header .topNav > .textWrap .texts > .title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 150%;
+  /* identical to box height, or 72px */
+  text-align: center;
+  letter-spacing: 0.032em;
+  color: var(--white);
+  background: transparent;
+}
+.header .topNav > .textWrap .texts > .description {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  /* or 19px */
+  letter-spacing: 0.032em;
+  color: var(--white);
+  background: transparent;
+}
+.header .navbarWrap {
+  width: 100%;
+  filter: drop-shadow(0px 2px 6px rgba(51, 38, 148, 0.02)) drop-shadow(0px 2px 24px rgba(31, 31, 31, 0.08));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header .navbarWrap .navbar {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0px;
+}
+.header .navbarWrap .navbar .navLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 36px;
+}
+.header .navbarWrap .navbar .navLinks > img {
+  width: 142.28px;
+  height: 48px;
+}
+.header .navbarWrap .navbar .navLinks .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+}
+.header .navbarWrap .navbar .navLinks .links div:nth-child(4) > a > p {
+  background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.header .navbarWrap .navbar .navLinks .links .link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 12px;
+  isolation: isolate;
+  position: relative;
+}
+.header .navbarWrap .navbar .navLinks .links .link a {
+  text-decoration: none;
+}
+.header .navbarWrap .navbar .navLinks .links .link a > p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  /* or 19px */
+  text-align: center;
+  letter-spacing: 0.032em;
+  color: var(--dark);
+}
+.header .navbarWrap .navbar .navLinks .links .link .line {
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  left: calc(50% - 8px - 0.5px);
+  bottom: -20px;
+  /* red-yellow-gradient */
+  background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
+  border-radius: 2px;
+}
+.header .navbarWrap .navbar .language {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+.header .navbarWrap .navbar .language .english {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  /* or 19px */
+  letter-spacing: 0.032em;
+}
+
+.projectSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 100px;
+}
+.projectSection .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
+  filter: drop-shadow(0px 2px 12px rgba(31, 31, 31, 0.02));
+}
+.projectSection .left .projectImgCarousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 22px;
+  gap: 22px;
+  isolation: isolate;
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  /* shadow-2 */
+  box-shadow: 0px 2px 12px rgba(31, 31, 31, 0.02);
+  border-radius: 6px;
+  position: relative;
+}
+.projectSection .left .projectImgCarousel .carouselImg {
+  width: 684px;
+  height: 460px;
+  /* card-bg */
+  background: rgba(10, 38, 64, 0.04);
+  border-radius: 6px;
+}
+.projectSection .left .projectImgCarousel .dots {
+  position: absolute;
+  background: transparent;
+  left: 348px;
+  top: 446px;
+}
+.projectSection .left .projectImgCarousel .dots img {
+  background: transparent;
+}
+.projectSection .left .projectDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px 20px;
+  gap: 16px;
+  background: var(--white);
+  /* shadow-2 */
+  box-shadow: 0px 2px 12px rgba(31, 31, 31, 0.02);
+  border-radius: 6px;
+}
+.projectSection .left .projectDescription .overallInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+}
+.projectSection .left .projectDescription .overallInfo .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  background: transparent;
+}
+.projectSection .left .projectDescription .overallInfo .left .title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  font-variant: all-small-caps;
+  /* dark-500 */
+  color: var(--dark);
+  background: transparent;
+}
+.projectSection .left .projectDescription .overallInfo .left .ratingWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+}
+.projectSection .left .projectDescription .overallInfo .left .ratingWrap p {
+  background: transparent;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.01em;
+  color: var(--dark);
+  opacity: 0.3;
+}
+.projectSection .left .projectDescription .overallInfo .left .ratingWrap img {
+  background: transparent;
+}
+.projectSection .left .projectDescription .overallInfo .right {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  background: transparent;
+}
+.projectSection .left .projectDescription .overallInfo .right img {
+  background: transparent;
+}
+.projectSection .left .projectDescription .grouping {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  background: transparent;
+}
+.projectSection .left .projectDescription .grouping .group {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 12px;
+  gap: 10px;
+  border: 0.8px solid #1F1F1F;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  background: transparent;
+}
+.projectSection .left .projectDescription .description {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* or 18px */
+  letter-spacing: 0.032em;
+  color: var(--dark);
+  background: transparent;
+}
+.projectSection .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 18px 20px;
+  gap: 8px;
+  filter: drop-shadow(0px 2px 12px rgba(31, 31, 31, 0.02));
+  background: #FFFFFF;
+  /* shadow-2 */
+  box-shadow: 0px 2px 12px rgba(31, 31, 31, 0.02);
+  border-radius: 6px;
+  width: 100%;
+}
+.projectSection .right .contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  background: transparent;
+}
+.projectSection .right .contact img {
+  background: transparent;
+}
+.projectSection .right .contact .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  background: transparent;
+}
+.projectSection .right .contact .info .name {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  font-variant: all-small-caps;
+  color: #000000;
+  background: transparent;
+}
+.projectSection .right .contact .info .number {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  font-variant: all-small-caps;
+  color: #01001F;
+  background: transparent;
+}
+.projectSection .right .buttonWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+.projectSection .right .buttonWrap > button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px 8px 16px;
+  gap: 14px;
+  background: var(--blue);
+  border-radius: 4px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  color: var(--white);
+  border: none;
+}
+.projectSection .right .buttonWrap > button > img {
+  background: transparent;
+}
+.projectSection .right .buttonWrap > button > p {
+  background: transparent;
+}
+
+.footerWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 100px;
+  gap: 36px;
+  isolation: isolate;
+  background: #0A2640;
+  margin-top: 100px;
+  position: relative;
+}
+.footerWrap .footer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  background: transparent;
+}
+.footerWrap .footer .section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  background: transparent;
+}
+.footerWrap .footer .section .title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  /* identical to box height, or 24px */
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.8px;
+  /* white */
+  color: #FFFFFF;
+  background: transparent;
+}
+.footerWrap .footer .section .list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 30px;
+  gap: 8px;
+  background: transparent;
+}
+.footerWrap .footer .section .list .listItem {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  /* white */
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+  background: transparent;
+  width: 100%;
+}
+.footerWrap .footer .section .list .listItem img {
+  background: transparent;
+  width: 8%;
+}
+.footerWrap .footer .section .list .listItem .listText {
+  background: transparent;
+}
+.footerWrap .footer .section1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  background: transparent;
+}
+.footerWrap .footer .section1 .title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  /* identical to box height, or 24px */
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.8px;
+  /* white */
+  color: #FFFFFF;
+  background: transparent;
+}
+.footerWrap .footer .section1 .list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  background: transparent;
+}
+.footerWrap .footer .section1 .list .listItem {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  /* white */
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+.footerWrap .footer .section1 .list .listItem img {
+  background: transparent;
+  width: 8%;
+}
+.footerWrap .footer .section1 .list .listItem .listText {
+  background: transparent;
+}
+.footerWrap img {
+  width: 20%;
+  background: transparent;
+}
+.footerWrap .line {
+  width: 100%;
+  height: 2px;
+  /* white */
+  background: #FFFFFF;
+  opacity: 0.32;
+}
+.footerWrap .navigate {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: transparent;
+}
+.footerWrap .navigate .links {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 32px;
+  background: transparent;
+}
+.footerWrap .navigate .links .link {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  /* or 19px */
+  text-transform: uppercase;
+  /* white */
+  color: #FFFFFF;
+  background: transparent;
+}
+.footerWrap .navigate .copyRight {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  /* or 19px */
+  /* white */
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  background: transparent;
+}
+.footerWrap .arrowConatiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  position: absolute;
+  width: 116px;
+  height: 80px;
+  right: 100px;
+  top: -40px;
+  /* white */
+  background: #FFFFFF;
+  border-radius: 40px;
+}
+.footerWrap .arrowConatiner .arrowWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  width: 100px;
+  height: 64px;
+  background: #0A2640;
+  box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.16);
+  border-radius: 32px;
+}/*# sourceMappingURL=portfolio-view.css.map */
