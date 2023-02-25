@@ -116,7 +116,11 @@ body {
   list-style: none;
 }
 .header .navbarWrap .navbar .navLinks .links div:nth-child(2) > a > p {
-  color: var(--red);
+  background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 .header .navbarWrap .navbar .navLinks .links .link {
   display: flex;
