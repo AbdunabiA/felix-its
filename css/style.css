@@ -23,6 +23,55 @@ body {
   align-items: center;
 }
 
+.animatingElemBottom {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s;
+}
+
+.bottomAnimation {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animatingElemLeft {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s;
+}
+
+.leftAnimation {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animatingElemRight {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s;
+}
+
+.rightAnimation {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fixed {
+  position: fixed;
+  z-index: 20;
+  animation: fadeInNav 0.8s;
+}
+@keyframes fadeInNav {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 .navbarWrap {
   width: 100%;
   filter: drop-shadow(0px 2px 6px rgba(51, 38, 148, 0.02)) drop-shadow(0px 2px 24px rgba(31, 31, 31, 0.08));
@@ -54,12 +103,18 @@ body {
   align-items: center;
   list-style: none;
 }
-.navbarWrap .navbar .navLinks .links div:nth-child(1) > a > p {
+.navbarWrap .navbar .navLinks .links div:nth-child(1) > a {
   background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.navbarWrap .navbar .navLinks .links div:nth-child(1) > a:hover {
+  background: var(--white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .navbarWrap .navbar .navLinks .links .link {
   display: flex;
@@ -73,8 +128,6 @@ body {
 }
 .navbarWrap .navbar .navLinks .links .link a {
   text-decoration: none;
-}
-.navbarWrap .navbar .navLinks .links .link a > p {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
@@ -84,6 +137,44 @@ body {
   text-align: center;
   letter-spacing: 0.032em;
   color: var(--dark);
+  background: transparent;
+}
+.navbarWrap .navbar .navLinks .links .link a:hover {
+  color: var(--white);
+}
+.navbarWrap .navbar .navLinks .links .link a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid var(--yellow);
+  border-bottom: 1px solid var(--yellow);
+  transform: scaleY(2);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
+.navbarWrap .navbar .navLinks .links .link a:hover:before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+.navbarWrap .navbar .navLinks .links .link a::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--red-yellow-gradient);
+  transform: scale(0);
+  transition: 0.5s;
+  z-index: -1;
+}
+.navbarWrap .navbar .navLinks .links .link a:hover:after {
+  transform: scale(1);
+  opacity: 1;
 }
 .navbarWrap .navbar .navLinks .links .link .line {
   position: absolute;
@@ -201,6 +292,69 @@ body {
   /* white */
   color: #FFFFFF;
   border: none;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  position: relative;
+  z-index: 1;
+  animation: moveInBottom 1s ease-out;
+}
+@media (min-width: 769px) {
+  .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained:hover {
+    transform: translateY(-3px);
+    box-shadow: 6px 8px 16px rgba(10, 38, 64, 0.32);
+  }
+  .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained:active {
+    transform: translateY(-1px);
+    box-shadow: 3px 4px 12px rgba(10, 38, 64, 0.32);
+  }
+  .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 0px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--red-yellow-gradient);
+  }
+  .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained:hover::before {
+    animation: backgroundAnimation 1s infinite;
+  }
+  .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+    background: var(--red-yellow-gradient);
+    opacity: 0.05;
+  }
+  .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained:active::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0.05;
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes backgroundAnimation {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
 }
 .container .banner .leftContent .bannerButtonsWrap .bannerButtonOutlined {
   box-sizing: border-box;
@@ -212,6 +366,18 @@ body {
   padding: 16px 48px;
   gap: 10px;
   border-image: var(--red-yellow-gradient) 0.5;
+  animation: moveInBottom 1s ease-out;
+  cursor: pointer;
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 .container .banner .leftContent .bannerButtonsWrap .bannerButtonOutlined .text {
   font-family: "Montserrat";
@@ -220,6 +386,8 @@ body {
   font-size: 16px;
   line-height: 20px;
   /* identical to box height */
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   text-align: center;
@@ -228,6 +396,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-fill-color: transparent;
 }
 .container .banner .rightContent {
   width: 100%;
@@ -335,6 +504,59 @@ body {
   gap: 8px;
   isolation: isolate;
   position: relative;
+  cursor: pointer;
+  transition: all 0.5s;
+  background: transparent;
+}
+.container .aboutUsWrap .leftContent .learnWrap:hover > .learn {
+  color: white;
+}
+.container .aboutUsWrap .leftContent .learnWrap:hover > img {
+  filter: invert(100%);
+}
+.container .aboutUsWrap .leftContent .learnWrap:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 8px 16px rgba(0, 0, 0, 0.3);
+}
+.container .aboutUsWrap .leftContent .learnWrap:active {
+  transform: translateY(-1px);
+  box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.3);
+}
+.container .aboutUsWrap .leftContent .learnWrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: var(--yellow) solid 1px;
+  box-sizing: border-box;
+  transform: scale(1.5);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.container .aboutUsWrap .leftContent .learnWrap:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+.container .aboutUsWrap .leftContent .learnWrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--red-yellow-gradient);
+  transform: scale(0);
+  transition: 0.5s;
+  z-index: -1;
+}
+.container .aboutUsWrap .leftContent .learnWrap:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
+.container .aboutUsWrap .leftContent .learnWrap > img {
+  background: transparent;
 }
 .container .aboutUsWrap .leftContent .learnWrap .learn {
   font-family: "Open Sans";
@@ -346,6 +568,7 @@ body {
   letter-spacing: 0.032em;
   /* dark-500 */
   color: var(--dark);
+  background: transparent;
 }
 .container .aboutUsWrap .leftContent .learnWrap .leftCorner {
   position: absolute;
@@ -356,6 +579,7 @@ body {
   /* dark-500 */
   border-top: 1px solid #1F1F1F;
   border-left: 1px solid #1F1F1F;
+  background: transparent;
 }
 .container .aboutUsWrap .leftContent .learnWrap .rightCorner {
   position: absolute;
@@ -366,6 +590,7 @@ body {
   /* dark-500 */
   border-bottom: 1px solid #1F1F1F;
   border-right: 1px solid #1F1F1F;
+  background: transparent;
 }
 .container .aboutUsWrap .rightContent {
   width: 100%;
@@ -422,6 +647,15 @@ body {
   /* dark-500 */
   color: var(--dark);
 }
+.container .statisticsWrap .statWrap:nth-child(1) .orangeText::after, .container .statisticsWrap .statWrap:nth-child(3) .orangeText::after {
+  content: "+";
+}
+.container .statisticsWrap .statWrap:nth-child(2) .orangeText::before {
+  content: "$";
+}
+.container .statisticsWrap .statWrap:nth-child(2) .orangeText::after {
+  content: "+ million";
+}
 .container .servicesWrap {
   display: flex;
   flex-direction: column;
@@ -447,11 +681,46 @@ body {
 }
 .container .servicesWrap .servicesContainer .service {
   position: relative;
+  width: 100%;
   overflow: hidden;
+  cursor: pointer;
 }
 .container .servicesWrap .servicesContainer .service > img {
   width: 100%;
   object-fit: fill;
+}
+.container .servicesWrap .servicesContainer .service .hiddenTextWrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.5s;
+  padding: 16px;
+  opacity: 0;
+}
+.container .servicesWrap .servicesContainer .service .hiddenText {
+  background: transparent;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--white);
+  margin-top: 30px;
+}
+.container .servicesWrap .servicesContainer .service:hover > .hiddenTextWrap {
+  opacity: 1;
+}
+.container .servicesWrap .servicesContainer .service:hover > .buttonContained {
+  color: var(--white);
+  background: transparent;
+  transition: all 0.5s;
+  transform: translateY(-130px);
+  padding: 0px;
+  font-weight: bold;
+  box-shadow: none;
+  z-index: 2;
 }
 .container .servicesWrap .servicesContainer .service .buttonContained {
   display: flex;
@@ -465,9 +734,9 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 20px;
   /* identical to box height */
   text-transform: capitalize;
+  transition: all 0.5s;
   /* white */
   color: #FFFFFF;
   position: absolute;
@@ -743,8 +1012,9 @@ body {
   color: #1F1F1F;
 }
 .container .portfolioWrap .projectsList {
+  width: 100%;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 24px;
 }
 .container .portfolioWrap .projectsList .project {
@@ -754,9 +1024,48 @@ body {
   padding: 0px;
   isolation: isolate;
   border: 2px solid rgba(10, 38, 64, 0.04);
+  position: relative;
+  transition: all 0.5s;
+  overflow: hidden;
+  cursor: pointer;
 }
 .container .portfolioWrap .projectsList .project > img {
   width: 100%;
+  transition: all 0.5s;
+}
+.container .portfolioWrap .projectsList .project:hover > img {
+  position: absolute;
+  height: 100%;
+  transition: all 0.5s;
+}
+.container .portfolioWrap .projectsList .project:hover > .descriptionWrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  background: transparent;
+}
+.container .portfolioWrap .projectsList .project:hover > .descriptionWrap .description, .container .portfolioWrap .projectsList .project:hover > .descriptionWrap .title, .container .portfolioWrap .projectsList .project:hover > .descriptionWrap .buttonWrap > .text {
+  color: var(--white);
+}
+.container .portfolioWrap .projectsList .project:hover > .blackOverlay {
+  height: 200%;
+  width: 200%;
+  right: 0;
+  border-radius: 0px;
+}
+.container .portfolioWrap .projectsList .project .blackOverlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  border-radius: 100%;
+  height: 0px;
+  width: 0px;
+  transition: all 0.5s;
 }
 .container .portfolioWrap .projectsList .project .descriptionWrap {
   display: flex;
@@ -764,6 +1073,7 @@ body {
   align-items: flex-start;
   padding: 16px 12px;
   gap: 16px;
+  transition: all 0.5s ease-in-out;
 }
 .container .portfolioWrap .projectsList .project .descriptionWrap .title {
   font-family: "Montserrat";
@@ -775,6 +1085,7 @@ body {
   letter-spacing: 0.032em;
   /* dark-500 */
   color: #1F1F1F;
+  background: transparent;
 }
 .container .portfolioWrap .projectsList .project .descriptionWrap .description {
   font-family: "Open Sans";
@@ -785,6 +1096,7 @@ body {
   /* or 24px */
   /* dark-500 */
   color: #1F1F1F;
+  background: transparent;
 }
 .container .portfolioWrap .projectsList .project .descriptionWrap .buttonWrap {
   display: flex;
@@ -793,6 +1105,7 @@ body {
   align-items: center;
   padding: 8px 0px;
   gap: 12px;
+  background: transparent;
 }
 .container .portfolioWrap .projectsList .project .descriptionWrap .buttonWrap .text {
   font-family: "Montserrat";
@@ -803,6 +1116,10 @@ body {
   /* identical to box height */
   /* blue-900 */
   color: #332694;
+  background: transparent;
+}
+.container .portfolioWrap .projectsList .project .descriptionWrap .buttonWrap > img {
+  background: transparent;
 }
 .container .portfolioWrap .button {
   display: flex;
@@ -814,12 +1131,36 @@ body {
   isolation: isolate;
   position: relative;
   margin-top: 16px;
+  cursor: pointer;
+}
+.container .portfolioWrap .button:hover > .orangeCircle {
+  width: 100%;
+  border-radius: 40px;
+}
+.container .portfolioWrap .button:hover > .text {
+  color: var(--white);
+}
+.container .portfolioWrap .button:hover > img {
+  filter: invert(100%);
 }
 .container .portfolioWrap .button .circle {
   position: absolute;
   z-index: -1;
   left: -10px;
   top: -18px;
+}
+.container .portfolioWrap .button .orangeCircle {
+  width: 50px;
+  height: 50px;
+  background: var(--red-yellow-gradient);
+  position: absolute;
+  border-radius: 100%;
+  z-index: -1;
+  left: -4px;
+  transition: all 0.5s;
+}
+.container .portfolioWrap .button > img {
+  background: transparent;
 }
 .container .portfolioWrap .button .text {
   font-family: "Montserrat";
@@ -1036,7 +1377,7 @@ body {
   /* dark-500 */
   color: #1F1F1F;
 }
-.container .questionsWrap .aloneQuestion > .answer {
+.container .questionsWrap .aloneQuestion > .answe {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
@@ -1065,6 +1406,10 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0px;
+  cursor: pointer;
+}
+.container .questionsWrap .questions .question1 > div img {
+  transition: all 0.5s;
 }
 .container .questionsWrap .questions .question1 > div > .question {
   font-family: "Montserrat";
@@ -1091,27 +1436,28 @@ body {
   letter-spacing: 0.032em;
   /* dark-500 */
   color: #1F1F1F;
+  overflow: hidden;
+  height: 0px;
+  transition: all 0.5s;
 }
-.container .questionsWrap .questions .onlyQuestion {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0px;
-  gap: 10px;
+
+.rotateImg {
+  transform: rotate(180deg);
 }
-.container .questionsWrap .questions .onlyQuestion > h2 {
-  font-family: "Montserrat";
+
+.openAnswer {
+  height: 100px;
+  font-family: "Open Sans";
   font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 300;
+  font-size: 16px;
   line-height: 150%;
-  /* identical to box height, or 36px */
+  padding: 0px 16px;
   display: flex;
   align-items: center;
-  /* dark-500 */
+  letter-spacing: 0.032em;
   color: #1F1F1F;
+  transition: all 0.5s;
 }
 
 .footerWrap {

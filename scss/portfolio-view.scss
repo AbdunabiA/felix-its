@@ -116,13 +116,11 @@ body{
                 list-style: none;
                 div:nth-child(4){
                     >a{
-                        >p{
-                            background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
-                            background-clip: text;
-                            text-fill-color: transparent;
-                        }
+                        background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-fill-color: transparent;
                     }
                 }
                 .link{
@@ -136,17 +134,15 @@ body{
                     position: relative;
                     a{
                         text-decoration: none;
-                        >p{
-                            font-family: 'Open Sans';
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 16px;
-                            line-height: 120%;
-                            /* or 19px */
-                            text-align: center;
-                            letter-spacing: 0.032em;
-                            color: var(--dark);
-                        }
+                        font-family: 'Open Sans';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 120%;
+                        /* or 19px */
+                        text-align: center;
+                        letter-spacing: 0.032em;
+                        color: var(--dark);
                     }
                     .line{
                         position: absolute;

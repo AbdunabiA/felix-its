@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="./js/index.js" async></script>
 </head>
 <body>
     <div class="navbarWrap">
@@ -17,23 +18,23 @@
                 <img src="./images/navLogo.png" alt="img">
                 <ul class="links">
                     <div class="link">
-                        <a href="./index.html"><p>Home</p></a> 
+                        <a href="./index.html">Home</a> 
                         <div class="line"></div>
                     </div>
                     <div class="link">
-                        <a href="./about-us.html"><p>About us</p></a> 
+                        <a href="./about-us.html">About us</a> 
                         <!-- <div class="line"></div>  -->
                     </div>
                     <div class="link">
-                        <a href="./services.html"><p>Services</p></a> 
+                        <a href="./services.html">Services</a> 
                         <!-- <div class="line"></div> -->
                     </div>
                     <div class="link">
-                        <a href="./portfolio.html"><p>Portfolio</p></a> 
+                        <a href="./portfolio.html">Portfolio</a> 
                         <!-- <div class="line"></div> -->
                     </div>
                     <div class="link">
-                        <a href="./contacts.html"><p>Contacts</p></a> 
+                        <a href="./contacts.html">Contacts</a> 
                         <!-- <div class="line"></div> -->
                     </div>
                 </ul>
@@ -47,7 +48,7 @@
     <div class="container">
         <div class="banner">
             <div class="leftContent">
-                <div class="bannerTextWrap">
+                <div class="bannerTextWrap animateFromLeft animatingElemLeft">
                     <h1 class="bannerTitleBlack">
                         A fully translated website,
                     </h1>
@@ -68,7 +69,7 @@
                 </div>
             </div>
             <div class="rightContent">
-                <img src="./images/bannerImg.png" alt="img">
+                <img class="animateFromRight animatingElemRight" src="./images/bannerImg.png" alt="img">
             </div>
         </div>
         <div class="logosWrap">
@@ -124,18 +125,18 @@
         <div class="aboutUsWrap">
             <div class="leftContent">
                 <div class="textWrap">
-                    <div class="titleWrap">
+                    <div class="titleWrap animateFromRight animatingElemRight">
                         <h1 class="title">“About us” </h1>
                         <div class="line"></div>
                     </div>
-                    <h1 class="description1">
+                    <h1 class="description1 animateFromLeft animatingElemLeft">
                         We seek to partner with great management teams and bring purpose built value-add capabilities that match the unique requirements of our companies.
                     </h1>
-                    <p class="description2">
+                    <p class="description2 animateFromRight animatingElemRight">
                         Each company we invest in is different and requires strategic resources from Brighton Park to address specific needs. We aim to help our companies attract world class talent, develop market-leading products, build highly productive sales organizations, and connect better with customers through our extensive set of C-level relationships with large enterprises.
                     </p>
                 </div>
-                <div class="learnWrap">
+                <div class="learnWrap animateFromLeft animatingElemLeft">
                     <div class="leftCorner"></div>
                     <div class="rightCorner"></div>
                     <p class="learn">
@@ -144,84 +145,114 @@
                     <img src="./images/aboutUsIcon.png" alt="">
                 </div>
             </div>
-            <div class="rightContent">
-                <img class="img1" src="./images/aboutUsFront.png" alt="">
-                <img class="img2" src="./images/aboutUsBack.png" alt="">
+            <div class="rightContent aboutUsRightContent">
+                <img class="img1 animateFromRight animatingElemRight" src="./images/aboutUsFront.png" alt="">
+                <img class="img2 animateFromLeft animatingElemLeft" src="./images/aboutUsBack.png" alt="">
             </div>
         </div>
         <div class="statisticsWrap">
             <div class="statWrap">
-                <p class="orangeText">100+</p>
+                <p class="orangeText" data-max="100">0</p>
                 <p class="blackText">projects funded</p>
             </div>
             <div class="statWrap">
-                <p class="orangeText">$3+ milion</p>
+                <p class="orangeText" data-max="3">0</p>
                 <p class="blackText">awarded</p>
             </div>
             <div class="statWrap">
-                <p class="orangeText">400+</p>
+                <p class="orangeText" data-max="400">0</p>
                 <p class="blackText">projects funded</p>
             </div>
         </div>
         <div class="servicesWrap">
-            <h1 class="title">“Services” </h1>
+            <h1 class="title">“Services”</h1>
             <div class="servicesContainer">
-                <div class="service">
+                <div class="service animateFromBottom animatingElemBottom">
                     <img src="./images/servicesSoftwareEngineering.png" alt="">
                     <button class="buttonContained">Software Engineering</button>
+                    <div class="hiddenTextWrap">
+                        <p class="hiddenText">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nemo non laudantium architecto veritatis, quia dignissimos, explicabo odit quasi earum autem nostrum cum, rerum culpa.
+                    </p>
+                    </div>
                 </div>
-                <div class="service">
+                <div class="service animateFromBottom animatingElemBottom">
                     <img src="./images/servicesProducts.png" alt="">
                     <button class="buttonContained">Products</button>
+                    <div class="hiddenTextWrap">
+                        <p class="hiddenText">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nemo non laudantium architecto veritatis, quia dignissimos, explicabo odit quasi earum autem nostrum cum, rerum culpa.
+                    </p>
+                    </div>
                 </div>
-                <div class="service">
+                <div class="service animateFromBottom animatingElemBottom">
                     <img src="./images/servicesDesign.png" alt="">
                     <button class="buttonContained">Design</button>
+                    <div class="hiddenTextWrap">
+                        <p class="hiddenText">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nemo non laudantium architecto veritatis, quia dignissimos, explicabo odit quasi earum autem nostrum cum, rerum culpa.
+                    </p>
+                    </div>
                 </div>
-                <div class="service">
+                <div class="service animateFromBottom animatingElemBottom">
                     <img src="./images/servicesBussinesAutomation.png" alt="">
                     <button class="buttonContained">Business automation</button>
+                    <div class="hiddenTextWrap">
+                        <p class="hiddenText">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nemo non laudantium architecto veritatis, quia dignissimos, explicabo odit quasi earum autem nostrum cum, rerum culpa.
+                    </p>
+                    </div>
                 </div>
-                <div class="service">
+                <div class="service animateFromBottom animatingElemBottom">
                     <img src="./images/servicesITDocumentation.png" alt="">
                     <button class="buttonContained">IT-documentation</button>
+                    <div class="hiddenTextWrap">
+                        <p class="hiddenText">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nemo non laudantium architecto veritatis, quia dignissimos, explicabo odit quasi earum autem nostrum cum, rerum culpa.
+                    </p>
+                    </div>
                 </div>
-                <div class="service">
+                <div class="service animateFromBottom animatingElemBottom">
                     <img src="./images/services(SEO).png" alt="">
                     <button class="buttonContained">
                         Search engine optimization (SEO)
                     </button>
+                    <div class="hiddenTextWrap">
+                        <p class="hiddenText">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem nemo non laudantium architecto veritatis, quia dignissimos, explicabo odit quasi earum autem nostrum cum, rerum culpa.
+                    </p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="offersWrap">
             <div class="topContent">
                 <div class="left">
-                    <img class="bg" src="./images/offersMan.png" alt="">
-                    <div class="chart">
+                    <img class="bg animateFromLeft animatingElemLeft" src="./images/offersMan.png" alt="">
+                    <div class="chart animateFromRight animatingElemRight">
                         <img src="./images/offersTopChart.png" alt="">
                         <h1 class="title">30%</h1>
                         <p class="date">More income in June</p>
                     </div>
                 </div>
                 <div class="right">
-                    <p class="title">
+                    <p class="title animateFromRight animatingElemRight">
                         We connect our customers with the best, and help them keep up-and stay open.
                     </p>
                     <div class="offers">
-                        <div class="offer">
+                        <div class="offer animateFromRight animatingElemRight">
                             <img src="./images/offersTopIcon.png" alt="">
                             <p class="offerText">
                                 We connect our customers with the best.
                             </p>
                         </div>
-                        <div class="offer">
+                        <div class="offer animateFromRight animatingElemRight">
                             <img src="./images/offersTopIcon.png" alt="">
                             <p class="offerText">
                                 Advisor success customer launch party.
                             </p>
                         </div>
-                        <div class="offer">
+                        <div class="offer animateFromRight animatingElemRight">
                             <img src="./images/offersTopIcon.png" alt="">
                             <p class="offerText">
                                 Business-to-consumer long tail.
@@ -232,23 +263,23 @@
             </div>
             <div class="bottomContent">
                 <div class="left">
-                    <p class="title">
+                    <p class="title animateFromLeft animatingElemLeft">
                         We connect our customers with the best, and help them keep up-and stay open.
                     </p>
                     <div class="offers">
-                        <div class="offer">
+                        <div class="offer animateFromLeft animatingElemLeft">
                             <img class="img1" src="./images/offersBottomIcon1.png" alt="">
                             <p class="offerText">
                                 We connect our customers with the best.
                             </p>
                         </div>
-                        <div class="offer">
+                        <div class="offer animateFromLeft animatingElemLeft">
                             <img src="./images/offersBottomIcon2.png" alt="">
                             <p class="offerText">
                                 Advisor success customer launch party.
                             </p>
                         </div>
-                        <div class="offer">
+                        <div class="offer animateFromLeft animatingElemLeft">
                             <img src="./images/offersBottomIcon3.png" alt="">
                             <p class="offerText">
                                 Business-to-consumer long tail.
@@ -257,8 +288,8 @@
                     </div>
                 </div>
                 <div class="right">
-                    <img class="bg" src="./images/offersWoman.png" alt="">
-                    <div class="chart">
+                    <img class="bg animateFromRight animatingElemRight" src="./images/offersWoman.png" alt="">
+                    <div class="chart animateFromLeft animatingElemLeft">
                         <img src="./images/offersBottomChart.png" alt="">
                         <h1 class="title">Status of web</h1>
                         <p class="date">January 2021</p>
@@ -299,6 +330,7 @@
                             <img src="./images/projectButtonIcon.png" alt="">
                         </div>
                     </div>
+                    <div class="blackOverlay"></div>
                 </div>
                 <div class="project">
                     <img src="./images/projectImg.png" alt="">
@@ -377,7 +409,8 @@
                 </div>
             </div>
             <div class="button">
-                <img class="circle" src="./images/portfolioRectangle.png" alt="">
+                <!-- <img class="circle" src="./images/portfolioRectangle.png" alt=""> -->
+                <div class="orangeCircle"></div>
                 <p class="text">Our portfolio</p>
                 <img src="./images/aboutUsIcon.png" alt="">
             </div>
@@ -455,51 +488,76 @@
                 <h2 class="question">
                     How are grants selected?
                 </h2>
-                <p class="answer">
+                <p class="answe">
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo lorem Ipsum is simply dummy text of the printing and typesetting.
                 </p>
             </div>
             <div class="questions">
                 <div class="question1">
-                    <div>
+                    <div class="openingDiv">
                         <h2 class="question">
                             What features come with Designer Search?
                         </h2>
-                        <img src="./images/questionsIconUp.png" alt="">
+                        <img src="./images/questionsIconDown.png" alt="">
                     </div>
                     <p class="answer">
                         With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
                     </p>
                 </div>
-                <div class="onlyQuestion">
-                    <h2>
-                        What features come with the Job Board?
-                    </h2>
-                    <img src="./images/questionsIconDown.png" alt="">
+                <div class="question1">
+                    <div class="openingDiv">
+                        <h2 class="question">
+                            What features come with Designer Search?
+                        </h2>
+                        <img src="./images/questionsIconDown.png" alt="">
+                    </div>
+                    <p class="answer">
+                        With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
+                    </p>
                 </div>
-                <div class="onlyQuestion">
-                    <h2>
-                        How many jobs can I post with the Job Board?
-                    </h2>
-                    <img src="./images/questionsIconDown.png" alt="">
+                <div class="question1">
+                    <div class="openingDiv">
+                        <h2 class="question">
+                            What features come with Designer Search?
+                        </h2>
+                        <img src="./images/questionsIconDown.png" alt="">
+                    </div>
+                    <p class="answer">
+                        With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
+                    </p>
                 </div>
-                <div class="onlyQuestion">
-                    <h2>
-                        What comes with the Job Board and Designer Search bundle?
-                    </h2>
-                    <img src="./images/questionsIconDown.png" alt="">
+                <div class="question1">
+                    <div class="openingDiv">
+                        <h2 class="question">
+                            What features come with Designer Search?
+                        </h2>
+                        <img src="./images/questionsIconDown.png" alt="">
+                    </div>
+                    <p class="answer">
+                        With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
+                    </p>
                 </div>
-                <div class="onlyQuestion">
-                    <h2>
-                        Is this a monthly subscription?
-                    </h2>
-                    <img src="./images/questionsIconDown.png" alt="">
+                <div class="question1">
+                    <div class="openingDiv">
+                        <h2 class="question">
+                            What features come with Designer Search?
+                        </h2>
+                        <img src="./images/questionsIconDown.png" alt="">
+                    </div>
+                    <p class="answer">
+                        With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
+                    </p>
                 </div>
-                <div class="onlyQuestion">
-                    <h2>
-                        How do I make a purchase?
-                    </h2>
-                    <img src="./images/questionsIconDown.png" alt="">
+                <div class="question1">
+                    <div class="openingDiv">
+                        <h2 class="question">
+                            What features come with Designer Search?
+                        </h2>
+                        <img src="./images/questionsIconDown.png" alt="">
+                    </div>
+                    <p class="answer">
+                        With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
+                    </p>
                 </div>
             </div>
         </div>

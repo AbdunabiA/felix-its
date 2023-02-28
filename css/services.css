@@ -115,7 +115,7 @@ body {
   align-items: center;
   list-style: none;
 }
-.header .navbarWrap .navbar .navLinks .links div:nth-child(3) > a > p {
+.header .navbarWrap .navbar .navLinks .links div:nth-child(3) > a {
   background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -134,8 +134,6 @@ body {
 }
 .header .navbarWrap .navbar .navLinks .links .link a {
   text-decoration: none;
-}
-.header .navbarWrap .navbar .navLinks .links .link a > p {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
