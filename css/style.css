@@ -110,12 +110,6 @@ body {
   background-clip: text;
   text-fill-color: transparent;
 }
-.navbarWrap .navbar .navLinks .links div:nth-child(1) > a:hover {
-  background: var(--white);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 .navbarWrap .navbar .navLinks .links .link {
   display: flex;
   flex-direction: row;
@@ -140,41 +134,11 @@ body {
   background: transparent;
 }
 .navbarWrap .navbar .navLinks .links .link a:hover {
-  color: var(--white);
-}
-.navbarWrap .navbar .navLinks .links .link a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-top: 1px solid var(--yellow);
-  border-bottom: 1px solid var(--yellow);
-  transform: scaleY(2);
-  opacity: 0;
-  transition: 0.5s;
-  z-index: -1;
-}
-.navbarWrap .navbar .navLinks .links .link a:hover:before {
-  transform: scaleY(1);
-  opacity: 1;
-}
-.navbarWrap .navbar .navLinks .links .link a::after {
-  content: "";
-  position: absolute;
-  top: 1px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--red-yellow-gradient);
-  transform: scale(0);
-  transition: 0.5s;
-  z-index: -1;
-}
-.navbarWrap .navbar .navLinks .links .link a:hover:after {
-  transform: scale(1);
-  opacity: 1;
+  background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 .navbarWrap .navbar .navLinks .links .link .line {
   position: absolute;
@@ -299,13 +263,9 @@ body {
   animation: moveInBottom 1s ease-out;
 }
 @media (min-width: 769px) {
-  .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained:hover {
-    transform: translateY(-3px);
-    box-shadow: 6px 8px 16px rgba(10, 38, 64, 0.32);
-  }
   .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained:active {
     transform: translateY(-1px);
-    box-shadow: 3px 4px 12px rgba(10, 38, 64, 0.32);
+    box-shadow: 2px 3px 8px rgba(10, 38, 64, 0.32);
   }
   .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained::before {
     content: "";
@@ -514,30 +474,15 @@ body {
 .container .aboutUsWrap .leftContent .learnWrap:hover > img {
   filter: invert(100%);
 }
-.container .aboutUsWrap .leftContent .learnWrap:hover {
-  transform: translateY(-3px);
-  box-shadow: 6px 8px 16px rgba(0, 0, 0, 0.3);
-}
-.container .aboutUsWrap .leftContent .learnWrap:active {
-  transform: translateY(-1px);
-  box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.3);
-}
-.container .aboutUsWrap .leftContent .learnWrap::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.container .aboutUsWrap .leftContent .learnWrap:hover > .leftCorner {
   width: 100%;
   height: 100%;
-  border: var(--yellow) solid 1px;
-  box-sizing: border-box;
-  transform: scale(1.5);
-  opacity: 0;
-  transition: all 0.5s;
+  border-image: var(--red-yellow-gradient) 0.5;
 }
-.container .aboutUsWrap .leftContent .learnWrap:hover::before {
-  transform: scale(1);
-  opacity: 1;
+.container .aboutUsWrap .leftContent .learnWrap:hover > .rightCorner {
+  width: 100%;
+  height: 100%;
+  border-image: var(--red-yellow-gradient) 0.5;
 }
 .container .aboutUsWrap .leftContent .learnWrap::after {
   content: "";
@@ -580,6 +525,7 @@ body {
   border-top: 1px solid #1F1F1F;
   border-left: 1px solid #1F1F1F;
   background: transparent;
+  transition: all 0.5s;
 }
 .container .aboutUsWrap .leftContent .learnWrap .rightCorner {
   position: absolute;
@@ -591,6 +537,7 @@ body {
   border-bottom: 1px solid #1F1F1F;
   border-right: 1px solid #1F1F1F;
   background: transparent;
+  transition: all 0.5s;
 }
 .container .aboutUsWrap .rightContent {
   width: 100%;
@@ -929,6 +876,7 @@ body {
   width: 460px;
   height: 640px;
   position: absolute;
+  object-fit: cover;
   top: 0;
   right: 0;
 }
@@ -1045,23 +993,34 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
-  transition: all 0.5s ease-in-out;
   background: transparent;
 }
 .container .portfolioWrap .projectsList .project:hover > .descriptionWrap .description, .container .portfolioWrap .projectsList .project:hover > .descriptionWrap .title, .container .portfolioWrap .projectsList .project:hover > .descriptionWrap .buttonWrap > .text {
   color: var(--white);
 }
-.container .portfolioWrap .projectsList .project:hover > .blackOverlay {
+.container .portfolioWrap .projectsList .project:hover .blackOverlay {
   height: 200%;
-  width: 200%;
-  right: 0;
-  border-radius: 0px;
+  width: 120%;
+  border-radius: 10px;
+}
+.container .portfolioWrap .projectsList .project:hover .blackOverlayContainer {
+  height: 200%;
+}
+.container .portfolioWrap .projectsList .project .blackOverlayContainer {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+  transition: all 3s;
+  height: 0px;
+  background: transparent;
 }
 .container .portfolioWrap .projectsList .project .blackOverlay {
   background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  bottom: 0;
-  right: 50%;
+  position: relative;
+  bottom: -10px;
   border-radius: 100%;
   height: 0px;
   width: 0px;
@@ -1178,6 +1137,7 @@ body {
 }
 
 .customersOpinionWrap {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1188,6 +1148,7 @@ body {
   margin-top: 100px;
   position: relative;
   background-image: url(../images/customersOpinion.png);
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1266,6 +1227,7 @@ body {
   align-items: flex-start;
   padding: 0px;
   gap: 24px;
+  position: relative;
 }
 .customersOpinionWrap > div .textWrap .right img {
   background: transparent;
@@ -1277,15 +1239,23 @@ body {
   align-items: flex-start;
   gap: 24px;
   background: transparent;
+  width: 100%;
 }
-.customersOpinionWrap > div .carouselWrap .carousel {
+.customersOpinionWrap > div .carouselWrap .splide {
+  background: transparent;
+  width: 100%;
+}
+.customersOpinionWrap > div .carouselWrap .splide .splide__track {
+  background: transparent;
+}
+.customersOpinionWrap > div .carouselWrap .splide .splide__track .splide__list .carousel {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 38px;
   gap: 38px;
 }
-.customersOpinionWrap > div .carouselWrap .carousel .carouselMessage {
+.customersOpinionWrap > div .carouselWrap .splide .splide__track .splide__list .carousel .carouselMessage {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
@@ -1295,19 +1265,19 @@ body {
   /* dark-500 */
   color: #1F1F1F;
 }
-.customersOpinionWrap > div .carouselWrap .carousel .author {
+.customersOpinionWrap > div .carouselWrap .splide .splide__track .splide__list .carousel .author {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 16px;
 }
-.customersOpinionWrap > div .carouselWrap .carousel .author .authorInfo {
+.customersOpinionWrap > div .carouselWrap .splide .splide__track .splide__list .carousel .author .authorInfo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
 }
-.customersOpinionWrap > div .carouselWrap .carousel .author .authorInfo .name {
+.customersOpinionWrap > div .carouselWrap .splide .splide__track .splide__list .carousel .author .authorInfo .name {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -1319,7 +1289,7 @@ body {
   /* dark-500 */
   color: #1F1F1F;
 }
-.customersOpinionWrap > div .carouselWrap .carousel .author .authorInfo .position {
+.customersOpinionWrap > div .carouselWrap .splide .splide__track .splide__list .carousel .author .authorInfo .position {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
@@ -1662,4 +1632,5 @@ body {
   background: #0A2640;
   box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.16);
   border-radius: 32px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

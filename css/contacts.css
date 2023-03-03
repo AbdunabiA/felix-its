@@ -27,6 +27,9 @@ body {
   width: 80%;
 }
 
+.header {
+  width: 100%;
+}
 .header .topNav {
   width: 100%;
   display: flex;
@@ -35,6 +38,10 @@ body {
   align-items: flex-start;
   isolation: isolate;
   position: relative;
+  height: 360px;
+  width: 100%;
+  background-image: url(../images/ContactsNavCover.png);
+  background-attachment: fixed;
 }
 .header .topNav > img {
   width: 100%;

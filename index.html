@@ -8,8 +8,20 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font links -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- JS linked -->
     <script src="./js/index.js" async></script>
+    <!-- Aos links -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- slider links -->
+    <script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
 </head>
 <body>
     <div class="navbarWrap">
@@ -48,7 +60,7 @@
     <div class="container">
         <div class="banner">
             <div class="leftContent">
-                <div class="bannerTextWrap animateFromLeft animatingElemLeft">
+                <div class="bannerTextWrap">
                     <h1 class="bannerTitleBlack">
                         A fully translated website,
                     </h1>
@@ -69,7 +81,7 @@
                 </div>
             </div>
             <div class="rightContent">
-                <img class="animateFromRight animatingElemRight" src="./images/bannerImg.png" alt="img">
+                <img  src="./images/bannerImg.png" alt="img">
             </div>
         </div>
         <div class="logosWrap">
@@ -123,20 +135,21 @@
             </div>
         </div>
         <div class="aboutUsWrap">
-            <div class="leftContent">
+            <div class="leftContent" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom"
+            data-aos-duration="500">
                 <div class="textWrap">
-                    <div class="titleWrap animateFromRight animatingElemRight">
+                    <div class="titleWrap">
                         <h1 class="title">“About us” </h1>
                         <div class="line"></div>
                     </div>
-                    <h1 class="description1 animateFromLeft animatingElemLeft">
+                    <h1 class="description1">
                         We seek to partner with great management teams and bring purpose built value-add capabilities that match the unique requirements of our companies.
                     </h1>
-                    <p class="description2 animateFromRight animatingElemRight">
+                    <p class="description2">
                         Each company we invest in is different and requires strategic resources from Brighton Park to address specific needs. We aim to help our companies attract world class talent, develop market-leading products, build highly productive sales organizations, and connect better with customers through our extensive set of C-level relationships with large enterprises.
                     </p>
                 </div>
-                <div class="learnWrap animateFromLeft animatingElemLeft">
+                <div class="learnWrap">
                     <div class="leftCorner"></div>
                     <div class="rightCorner"></div>
                     <p class="learn">
@@ -146,8 +159,8 @@
                 </div>
             </div>
             <div class="rightContent aboutUsRightContent">
-                <img class="img1 animateFromRight animatingElemRight" src="./images/aboutUsFront.png" alt="">
-                <img class="img2 animateFromLeft animatingElemLeft" src="./images/aboutUsBack.png" alt="">
+                <img class="img1" data-aos="zoom-out-left" src="./images/aboutUsFront.png" alt="">
+                <img class="img2" data-aos="zoom-in-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500" src="./images/aboutUsBack.png" alt="">
             </div>
         </div>
         <div class="statisticsWrap">
@@ -167,7 +180,7 @@
         <div class="servicesWrap">
             <h1 class="title">“Services”</h1>
             <div class="servicesContainer">
-                <div class="service animateFromBottom animatingElemBottom">
+                <div class="service" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                     <img src="./images/servicesSoftwareEngineering.png" alt="">
                     <button class="buttonContained">Software Engineering</button>
                     <div class="hiddenTextWrap">
@@ -176,7 +189,7 @@
                     </p>
                     </div>
                 </div>
-                <div class="service animateFromBottom animatingElemBottom">
+                <div class="service" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                     <img src="./images/servicesProducts.png" alt="">
                     <button class="buttonContained">Products</button>
                     <div class="hiddenTextWrap">
@@ -185,7 +198,7 @@
                     </p>
                     </div>
                 </div>
-                <div class="service animateFromBottom animatingElemBottom">
+                <div class="service" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                     <img src="./images/servicesDesign.png" alt="">
                     <button class="buttonContained">Design</button>
                     <div class="hiddenTextWrap">
@@ -194,7 +207,7 @@
                     </p>
                     </div>
                 </div>
-                <div class="service animateFromBottom animatingElemBottom">
+                <div class="service" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                     <img src="./images/servicesBussinesAutomation.png" alt="">
                     <button class="buttonContained">Business automation</button>
                     <div class="hiddenTextWrap">
@@ -203,7 +216,7 @@
                     </p>
                     </div>
                 </div>
-                <div class="service animateFromBottom animatingElemBottom">
+                <div class="service" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                     <img src="./images/servicesITDocumentation.png" alt="">
                     <button class="buttonContained">IT-documentation</button>
                     <div class="hiddenTextWrap">
@@ -212,7 +225,7 @@
                     </p>
                     </div>
                 </div>
-                <div class="service animateFromBottom animatingElemBottom">
+                <div class="service" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                     <img src="./images/services(SEO).png" alt="">
                     <button class="buttonContained">
                         Search engine optimization (SEO)
@@ -228,31 +241,31 @@
         <div class="offersWrap">
             <div class="topContent">
                 <div class="left">
-                    <img class="bg animateFromLeft animatingElemLeft" src="./images/offersMan.png" alt="">
-                    <div class="chart animateFromRight animatingElemRight">
+                    <img class="bg" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500" src="./images/offersMan.png" alt="">
+                    <div class="chart" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                         <img src="./images/offersTopChart.png" alt="">
                         <h1 class="title">30%</h1>
                         <p class="date">More income in June</p>
                     </div>
                 </div>
                 <div class="right">
-                    <p class="title animateFromRight animatingElemRight">
+                    <p class="title" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                         We connect our customers with the best, and help them keep up-and stay open.
                     </p>
                     <div class="offers">
-                        <div class="offer animateFromRight animatingElemRight">
+                        <div class="offer" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                             <img src="./images/offersTopIcon.png" alt="">
                             <p class="offerText">
                                 We connect our customers with the best.
                             </p>
                         </div>
-                        <div class="offer animateFromRight animatingElemRight">
+                        <div class="offer" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                             <img src="./images/offersTopIcon.png" alt="">
                             <p class="offerText">
                                 Advisor success customer launch party.
                             </p>
                         </div>
-                        <div class="offer animateFromRight animatingElemRight">
+                        <div class="offer" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                             <img src="./images/offersTopIcon.png" alt="">
                             <p class="offerText">
                                 Business-to-consumer long tail.
@@ -263,23 +276,23 @@
             </div>
             <div class="bottomContent">
                 <div class="left">
-                    <p class="title animateFromLeft animatingElemLeft">
+                    <p class="title" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                         We connect our customers with the best, and help them keep up-and stay open.
                     </p>
                     <div class="offers">
-                        <div class="offer animateFromLeft animatingElemLeft">
+                        <div class="offer" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                             <img class="img1" src="./images/offersBottomIcon1.png" alt="">
                             <p class="offerText">
                                 We connect our customers with the best.
                             </p>
                         </div>
-                        <div class="offer animateFromLeft animatingElemLeft">
+                        <div class="offer" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                             <img src="./images/offersBottomIcon2.png" alt="">
                             <p class="offerText">
                                 Advisor success customer launch party.
                             </p>
                         </div>
-                        <div class="offer animateFromLeft animatingElemLeft">
+                        <div class="offer" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                             <img src="./images/offersBottomIcon3.png" alt="">
                             <p class="offerText">
                                 Business-to-consumer long tail.
@@ -288,8 +301,8 @@
                     </div>
                 </div>
                 <div class="right">
-                    <img class="bg animateFromRight animatingElemRight" src="./images/offersWoman.png" alt="">
-                    <div class="chart animateFromLeft animatingElemLeft">
+                    <img class="bg" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500" src="./images/offersWoman.png" alt="">
+                    <div class="chart" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500">
                         <img src="./images/offersBottomChart.png" alt="">
                         <h1 class="title">Status of web</h1>
                         <p class="date">January 2021</p>
@@ -330,7 +343,9 @@
                             <img src="./images/projectButtonIcon.png" alt="">
                         </div>
                     </div>
-                    <div class="blackOverlay"></div>
+                    <div class="blackOverlayContainer">
+                        <div class="blackOverlay"></div>
+                    </div>
                 </div>
                 <div class="project">
                     <img src="./images/projectImg.png" alt="">
@@ -430,12 +445,123 @@
                     </p>
                 </div>
                 <div class="right">
-                    <img src="./images/customersOpinionLeftIcon.png" alt="">
-                    <img src="./images/customersOpinionRightIcon.png" alt="">
+                    <div class="splide__arrows splide__arrows--rtl" style="position: absolute; right: 0; bottom: 0;">
+                        <button
+                            class="splide__arrow splide__arrow--prev"
+                            type="button"
+                            aria-label="Previous slide"
+                            aria-controls="splide01-track"
+                        >
+                            <svg>
+                                <img src="./images/customersOpinionLeftIcon.png" alt="">
+                            </svg>
+                        </button>
+                        <button
+                            class="splide__arrow splide__arrow--next"
+                            type="button"
+                            aria-label="Next slide"
+                            aria-controls="splide01-track"
+                        >
+                            <svg>
+                                <img src="./images/customersOpinionRightIcon.png" alt="">
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- <button class="slider_left">
+                        <img src="./images/customersOpinionLeftIcon.png" alt="">
+                    </button>
+                    <button class="slider_right">
+                        <img src="./images/customersOpinionRightIcon.png" alt="">
+                    </button> -->
+                  
                 </div>
             </div>
             <div class="carouselWrap">
-                <div class="carousel">
+                <section class="splide" aria-label="Splide Basic HTML Example">
+                    <!-- <ul class="splide__pagination splide__pagination--ltr" role="tablist" aria-label="Select a slide to show">
+  <li role="presentation">
+    <button
+      class="splide__pagination__page is-active"
+      type="button"
+      role="tab"
+      aria-controls="splide01-slide01"
+      aria-label="Go to slide 1"
+      aria-selected="true">
+    </button>
+  </li>
+  <li role="presentation">
+    <button
+      class="splide__pagination__page"
+      type="button"
+      role="tab"
+      aria-controls="splide01-slide02"
+      aria-label="Go to slide 2"
+      tabindex="-1"
+    >
+    </button>
+  </li>
+<li role="presentation">
+    <button
+      class="splide__pagination__page"
+      type="button"
+      role="tab"
+      aria-controls="splide01-slide03"
+      aria-label="Go to slide 3"
+      >
+    </button>
+  </li>
+</ul> -->
+                    <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <div class="carousel">
+                                    <p class="carouselMessage">
+                                        “Buyer buzz partner network disruptive non-disclosure agreement business”
+                                    </p>
+                                    <div class="author">
+                                        <img src="./images/avatar.png" alt="">
+                                        <div class="authorInfo">
+                                            <h6 class="name">Albus Dumbledore</h6>
+                                            <p class="position">Manager @ Howarts</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="carousel">
+                                    <p class="carouselMessage">
+                                        “Buyer buzz partner network disruptive non-disclosure agreement business”
+                                    </p>
+                                    <div class="author">
+                                        <img src="./images/avatar.png" alt="">
+                                        <div class="authorInfo">
+                                            <h6 class="name">Albus Dumbledore</h6>
+                                            <p class="position">Manager @ Howarts</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="carousel">
+                                    <p class="carouselMessage">
+                                        “Buyer buzz partner network disruptive non-disclosure agreement business”
+                                    </p>
+                                    <div class="author">
+                                        <img src="./images/avatar.png" alt="">
+                                        <div class="authorInfo">
+                                            <h6 class="name">Albus Dumbledore</h6>
+                                            <p class="position">Manager @ Howarts</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </li>
+                            </ul>
+                    </div>
+                </section>
+
+
+                <!-- <div class="carousel">
                     <p class="carouselMessage">
                         “Buyer buzz partner network disruptive non-disclosure agreement business”
                     </p>
@@ -472,12 +598,12 @@
                             <p class="position">Manager @ Howarts</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="carouselDots">
-                <img src="./images/carouselDotContained.png" alt="">
+                <!-- <img src="./images/carouselDotContained.png" alt="">
                 <img src="./images/carouselDotOutlined.png" alt="">
-                <img src="./images/carouselDotOutlined.png" alt="">
+                <img src="./images/carouselDotOutlined.png" alt=""> -->
             </div>
         </div>
     </div>
@@ -498,7 +624,7 @@
                         <h2 class="question">
                             What features come with Designer Search?
                         </h2>
-                        <img src="./images/questionsIconDown.png" alt="">
+                        <img src="./images/questionsIconDown.png" alt="" class="img1 accordion-image">
                     </div>
                     <p class="answer">
                         With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
@@ -509,7 +635,7 @@
                         <h2 class="question">
                             What features come with Designer Search?
                         </h2>
-                        <img src="./images/questionsIconDown.png" alt="">
+                        <img src="./images/questionsIconDown.png" alt="" class="img2 accordion-image">
                     </div>
                     <p class="answer">
                         With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
@@ -520,7 +646,7 @@
                         <h2 class="question">
                             What features come with Designer Search?
                         </h2>
-                        <img src="./images/questionsIconDown.png" alt="">
+                        <img src="./images/questionsIconDown.png" alt="" class="img3 accordion-image">
                     </div>
                     <p class="answer">
                         With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
@@ -531,7 +657,7 @@
                         <h2 class="question">
                             What features come with Designer Search?
                         </h2>
-                        <img src="./images/questionsIconDown.png" alt="">
+                        <img src="./images/questionsIconDown.png" alt="" class="img4 accordion-image">
                     </div>
                     <p class="answer">
                         With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
@@ -542,7 +668,7 @@
                         <h2 class="question">
                             What features come with Designer Search?
                         </h2>
-                        <img src="./images/questionsIconDown.png" alt="">
+                        <img src="./images/questionsIconDown.png" alt="" class="img5 accordion-image">
                     </div>
                     <p class="answer">
                         With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
@@ -553,7 +679,7 @@
                         <h2 class="question">
                             What features come with Designer Search?
                         </h2>
-                        <img src="./images/questionsIconDown.png" alt="">
+                        <img src="./images/questionsIconDown.png" alt="" class="img6 accordion-image">
                     </div>
                     <p class="answer">
                         With the Job Board you have access to one job posting and you can easily swap out listings as many times as you need to. If you’d like to have multiple postings up at the same time, you are able to purchase multiple Job Board subscriptions.
@@ -657,5 +783,8 @@
             </div>
         </div>
     </div>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
