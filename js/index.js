@@ -120,7 +120,7 @@ const left = document.querySelector(".slider_left");
 const right = document.querySelector(".slider_right");
 
 const splide = new Splide(".splide", {
-  arrows: { prev: ".splide__arrow--prev", next: ".splide__arrow--next" },
+  // arrows: { prev: ".splide__arrow--prev", next: ".splide__arrow--next" },
   type: "loop",
   arrows: false,
   dragMinThreshold: 10,
@@ -134,12 +134,12 @@ const splide = new Splide(".splide", {
   pauseOnHover: true,
   keyboard: true,
   slideFocus: true,
-  pagination: true,
+  pagination: false,
   breakpoints: {
-    768: {
+    992: {
       perPage: 2,
     },
-    426: {
+    575: {
       perPage: 1,
     },
   },
@@ -153,4 +153,25 @@ const goToTopButton = document.querySelector(".arrowWrap");
 
 goToTopButton.addEventListener('click', ()=>{
   window.scrollTo({ top: 0, behavior: "smooth" });
+})
+
+
+window.addEventListener("load", function () {
+  deSVG(".orangeIconOnHover", true);
+});
+
+
+const mobileNav = document.querySelector(".links-mobile-container")
+const closeButton = document.querySelector(".closeButton");
+const burger = document.querySelector('.burger')
+
+burger.addEventListener('click', ()=>{
+  // mobileNav.style.display = 'block'
+  // mobileNav.style.height = '100vh'
+  mobileNav.classList.add('showModal')
+})
+closeButton.addEventListener('click', ()=>{
+  // mobileNav.style.display = 'none'
+  // mobileNav.style.height = "0vh";
+  mobileNav.classList.remove("showModal");
 })
