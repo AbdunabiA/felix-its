@@ -1943,6 +1943,11 @@ body{
                 grid-template-columns: 1fr 1fr 1fr 1fr;
                 width: 100%;
             }
+            >a{
+                text-decoration: none;
+                overflow: hidden;
+                position: relative;
+            }
             .project{
                 display: flex;
                 flex-direction: column;
@@ -1950,9 +1955,9 @@ body{
                 padding: 0px;
                 isolation: isolate;
                 border: 2px solid rgba(10, 38, 64, 0.04);
-                position: relative;
+                
                 transition: all .5s;
-                overflow: hidden;
+                
                 cursor: pointer;
                 >img{
                     width: 100%;

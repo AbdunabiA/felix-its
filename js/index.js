@@ -1,3 +1,4 @@
+AOS.init();
 const statisticsWrap = document.querySelector(".statisticsWrap");
 const stat = document.querySelectorAll(".orangeText");
 let start = false;
@@ -5,7 +6,7 @@ let start = false;
 const navbarWrap = document.querySelector(".navbarWrap");
 const logosWrap = document.querySelector(".logosWrap");
 
-// THESE CODES ARE FOR NUMBER COUNTING AND NAVBAR 
+// THESE CODES ARE FOR NUMBER COUNTING AND NAVBAR
 
 window.onscroll = function () {
   if (scrollY >= statisticsWrap.offsetTop - 500) {
@@ -14,10 +15,10 @@ window.onscroll = function () {
     }
     start = true;
   }
-  if(scrollY >= logosWrap.offsetTop){
-    navbarWrap.classList.add('fixed')
-  }else{
-    navbarWrap.classList.remove('fixed')
+  if (scrollY >= logosWrap.offsetTop) {
+    navbarWrap.classList.add("fixed");
+  } else {
+    navbarWrap.classList.remove("fixed");
   }
 };
 
@@ -30,8 +31,6 @@ function startCount(el) {
     }
   }, 5);
 }
-
-
 
 // const animateFromLeft = document.querySelectorAll(".animateFromLeft");
 // const animateFromRight = document.querySelectorAll(".animateFromRight");
@@ -80,28 +79,28 @@ function startCount(el) {
 
 // THESE CODES ARE FOR ACCORDION
 
-const openingDivs = document.querySelectorAll('.openingDiv');
-const answers = document.querySelectorAll('.answer')
+const openingDivs = document.querySelectorAll(".openingDiv");
+const answers = document.querySelectorAll(".answer");
 const images = document.querySelectorAll(".accordion-image");
 
-openingDivs.forEach((div, i)=>{
-  div.addEventListener('click', (e)=>{
-    const answer = div.nextElementSibling
-    const img = div.lastElementChild
-    answers.forEach((answer, index)=>{
-      if(answer.classList.contains('openAnswer') && i!==index){
+openingDivs.forEach((div, i) => {
+  div.addEventListener("click", (e) => {
+    const answer = div.nextElementSibling;
+    const img = div.lastElementChild;
+    answers.forEach((answer, index) => {
+      if (answer.classList.contains("openAnswer") && i !== index) {
         // img.classList.remove("rotateImg");
         answer.classList.remove("openAnswer");
         answer.classList.add("answer");
       }
-    })
+    });
     images.forEach((image, index) => {
       if (image.classList.contains("rotateImg") && i !== index) {
         image.classList.remove("rotateImg");
       }
     });
-    if(answer.classList.contains('answer')){
-      answer.classList.remove('answer')
+    if (answer.classList.contains("answer")) {
+      answer.classList.remove("answer");
       answer.classList.add("openAnswer");
       img.classList.add("rotateImg");
     } else {
@@ -109,10 +108,8 @@ openingDivs.forEach((div, i)=>{
       answer.classList.add("answer");
       img.classList.remove("rotateImg");
     }
-    })
-})
-
-
+  });
+});
 
 // THESE CODES ARE FOR CAROUSEL
 
@@ -151,27 +148,25 @@ splide.mount();
 //THESE CODES ARE FOR GOING TO TOP PART OF THE PAGE
 const goToTopButton = document.querySelector(".arrowWrap");
 
-goToTopButton.addEventListener('click', ()=>{
+goToTopButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
-})
-
+});
 
 window.addEventListener("load", function () {
   deSVG(".orangeIconOnHover", true);
 });
 
-
-const mobileNav = document.querySelector(".links-mobile-container")
+const mobileNav = document.querySelector(".links-mobile-container");
 const closeButton = document.querySelector(".closeButton");
-const burger = document.querySelector('.burger')
+const burger = document.querySelector(".burger");
 
-burger.addEventListener('click', ()=>{
+burger.addEventListener("click", () => {
   // mobileNav.style.display = 'block'
   // mobileNav.style.height = '100vh'
-  mobileNav.classList.add('showModal')
-})
-closeButton.addEventListener('click', ()=>{
+  mobileNav.classList.add("showModal");
+});
+closeButton.addEventListener("click", () => {
   // mobileNav.style.display = 'none'
   // mobileNav.style.height = "0vh";
   mobileNav.classList.remove("showModal");
-})
+});

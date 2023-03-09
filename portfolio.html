@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felix-ITS</title>
+    <!-- styles link -->
     <link rel="stylesheet" href="./css/portfolio.css">
+    <!-- fonts links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- fontawesome link -->
+    <script src="https://kit.fontawesome.com/d90799ddd3.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="header">
         <div class="topNav">
-            <!-- <img src="./images/portfolioNavCover.png" alt="img"> -->
             <div class="blackCover"></div>
             <div class="textWrap">
                 <div class="container">
@@ -31,15 +34,15 @@
                 <ul class="links">
                     <div class="link">
                         <a href="./index.html">Home</a> 
-                        <!-- <div class="line"></div> -->
+                        
                     </div>
                     <div class="link">
                         <a href="./about-us.html">About us</a> 
-                        <!-- <div class="line"></div>  -->
+                        
                     </div>
                     <div class="link">
                         <a href="./services.html">Services</a> 
-                        <!-- <div class="line"></div> -->
+                        
                     </div>
                     <div class="link">
                         <a href="./portfolio.html">Portfolio</a> 
@@ -47,19 +50,51 @@
                     </div>
                     <div class="link">
                         <a href="./contacts.html">Contacts</a> 
-                        <!-- <div class="line"></div> -->
+                        
                     </div>
                 </ul>
             </div>
             <div class="language">
-                <p class="english">English</p>
+                <select class="lanSelect" name="language" id="lan">
+                    <option class="lanItem" value="en">English</option>
+                    <option class="lanItem" value="ru">Russian</option>
+                    <option class="lanItem" value="uz">Uzbek</option>
+                </select>
+                <!-- <p class="english">English</p> -->
                 <img src="./images/flagOfAmerica.png" alt="">
+            </div>
+            <i class="fa-solid fa-bars burger"></i>
+            <div class="links-mobile-container">
+                <ul class="links-mobile">
+                    <div class="link-mobile">
+                        <a href="./index.html">Home</a> 
+                        <!-- <div class="line"></div> -->
+                    </div>
+                    <div class="link-mobile">
+                        <a href="./about-us.html">About us</a> 
+                        
+                    </div>
+                    <div class="link-mobile">
+                        <a href="./services.html">Services</a> 
+                        
+                    </div>
+                    <div class="link-mobile">
+                        <a href="./portfolio.html">Portfolio</a> 
+                        
+                    </div>
+                    <div class="link-mobile">
+                        <a href="./contacts.html">Contacts</a> 
+                        
+                    </div>
+                    <button class="closeButton">close</button>
+                </ul>
             </div>
         </div>
     </div>
     </div>
     <div class="container">
         <div class="portfolioWrap">
+            <h1 class="title">“Portfolio”</h1>
             <div class="projectsMenuWrap">
                 <div class="projectsMenu">
                     <div class="menuItem">
@@ -74,7 +109,8 @@
                 </div>
             </div>
             <div class="projectsList">
-                <div class="project">
+                <a href="./portfolio-view.html">
+                    <div class="project">
                     <img src="./images/projectImg.png" alt="">
                     <div class="descriptionWrap">
                         <p class="title">
@@ -85,11 +121,17 @@
                         </p>
                         <div class="buttonWrap">
                             <p class="text">Read More</p>
-                            <img src="./images/projectButtonIcon.png" alt="">
+                            <img class="orangeIconOnHover" src="./images/projectButtonIcon.svg" alt="">
                         </div>
                     </div>
+                    <div class="blackOverlayContainer">
+                        <div class="blackOverlay"></div>
+                    </div>
                 </div>
-                <div class="project">
+                </a>
+                
+                <a href="./portfolio-view.html">
+                    <div class="project">
                     <img src="./images/projectImg.png" alt="">
                     <div class="descriptionWrap">
                         <p class="title">
@@ -100,11 +142,17 @@
                         </p>
                         <div class="buttonWrap">
                             <p class="text">Read More</p>
-                            <img src="./images/projectButtonIcon.png" alt="">
+                            <img class="orangeIconOnHover" src="./images/projectButtonIcon.svg" alt="">
                         </div>
                     </div>
+                    <div class="blackOverlayContainer">
+                        <div class="blackOverlay"></div>
+                    </div>
                 </div>
-                <div class="project">
+                </a>
+
+                <a href="./portfolio-view.html">
+                    <div class="project">
                     <img src="./images/projectImg.png" alt="">
                     <div class="descriptionWrap">
                         <p class="title">
@@ -115,11 +163,17 @@
                         </p>
                         <div class="buttonWrap">
                             <p class="text">Read More</p>
-                            <img src="./images/projectButtonIcon.png" alt="">
+                            <img class="orangeIconOnHover" src="./images/projectButtonIcon.svg" alt="">
                         </div>
                     </div>
+                    <div class="blackOverlayContainer">
+                        <div class="blackOverlay"></div>
+                    </div>
                 </div>
-                <div class="project">
+                </a>
+
+                <a href="./portfolio-view.html">
+                    <div class="project">
                     <img src="./images/projectImg.png" alt="">
                     <div class="descriptionWrap">
                         <p class="title">
@@ -130,11 +184,17 @@
                         </p>
                         <div class="buttonWrap">
                             <p class="text">Read More</p>
-                            <img src="./images/projectButtonIcon.png" alt="">
+                            <img class="orangeIconOnHover" src="./images/projectButtonIcon.svg" alt="">
                         </div>
                     </div>
+                    <div class="blackOverlayContainer">
+                        <div class="blackOverlay"></div>
+                    </div>
                 </div>
-                <div class="project">
+                </a>
+
+                <a href="./portfolio-view.html">
+                    <div class="project">
                     <img src="./images/projectImg.png" alt="">
                     <div class="descriptionWrap">
                         <p class="title">
@@ -145,11 +205,17 @@
                         </p>
                         <div class="buttonWrap">
                             <p class="text">Read More</p>
-                            <img src="./images/projectButtonIcon.png" alt="">
+                            <img class="orangeIconOnHover" src="./images/projectButtonIcon.svg" alt="">
                         </div>
                     </div>
+                    <div class="blackOverlayContainer">
+                        <div class="blackOverlay"></div>
+                    </div>
                 </div>
-                <div class="project">
+                </a>
+
+                <a href="./portfolio-view.html">
+                    <div class="project">
                     <img src="./images/projectImg.png" alt="">
                     <div class="descriptionWrap">
                         <p class="title">
@@ -160,14 +226,24 @@
                         </p>
                         <div class="buttonWrap">
                             <p class="text">Read More</p>
-                            <img src="./images/projectButtonIcon.png" alt="">
+                            <img class="orangeIconOnHover" src="./images/projectButtonIcon.svg" alt="">
                         </div>
                     </div>
+                    <div class="blackOverlayContainer">
+                        <div class="blackOverlay"></div>
+                    </div>
                 </div>
+                </a>
+            </div>
+            <div class="button">
+                <div class="orangeCircle"></div>
+                <p class="text">Our portfolio</p>
+                <img src="./images/aboutUsIcon.png" alt="">
             </div>
         </div>
     </div>
     <div class="footerWrap">
+        <div>
         <div class="footer">
             <div class="section">
                 <h1 class="title">Services</h1>
@@ -261,6 +337,30 @@
                 <img src="./images/footerUpIcon.png" alt="">
             </div>
         </div>
+        </div>
     </div>
+    <script>
+        //THESE CODES ARE FOR GOING TO TOP PART OF THE PAGE
+        const goToTopButton = document.querySelector(".arrowWrap");
+
+        goToTopButton.addEventListener('click', ()=>{
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        })
+
+        const mobileNav = document.querySelector(".links-mobile-container");
+        const closeButton = document.querySelector(".closeButton");
+        const burger = document.querySelector(".burger");
+
+        burger.addEventListener("click", () => {
+        // mobileNav.style.display = 'block'
+        // mobileNav.style.height = '100vh'
+        mobileNav.classList.add("showModal");
+        });
+        closeButton.addEventListener("click", () => {
+        // mobileNav.style.display = 'none'
+        // mobileNav.style.height = "0vh";
+        mobileNav.classList.remove("showModal");
+        });
+    </script>
 </body>
 </html>
