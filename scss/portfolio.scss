@@ -55,7 +55,7 @@ body{
     width: 100%;
     .topNav{
         width: 100%;
-        display: flex;
+        display: flex; 
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-start;
@@ -103,6 +103,12 @@ body{
                 background: transparent;
                 @media (min-width:320px) {
                     bottom: 10px;
+                }
+                @media (min-width:576px) {
+                    bottom: 20px;
+                }
+                @media (min-width:1200px) {
+                    bottom: 28px;
                 }
                 >.title{
                     font-family: 'Montserrat';

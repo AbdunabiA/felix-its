@@ -104,6 +104,12 @@ body{
                 @media (min-width:320px) {
                     bottom: 10px;
                 }
+                @media (min-width:576px) {
+                    bottom: 20px;
+                }
+                @media (min-width:1200px) {
+                    bottom: 28px;
+                }
                 >.title{
                     font-family: 'Montserrat';
                     font-style: normal;
