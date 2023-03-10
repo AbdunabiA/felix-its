@@ -766,11 +766,12 @@ body {
   background: transparent;
 }
 .projectSection .left .projectDescription .overallInfo .right {
+  justify-content: end;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 12px;
-  background: transparent;
+  background: var(--white);
 }
 .projectSection .left .projectDescription .overallInfo .right img {
   background: transparent;
@@ -864,6 +865,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   width: 100%;
+  background: transparent;
 }
 .projectSection .right .buttonWrap > button {
   display: flex;
