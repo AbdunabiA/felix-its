@@ -60,16 +60,20 @@ body {
 .fixed {
   position: fixed;
   z-index: 20;
-  animation: fadeInNav 0.8s;
 }
-@keyframes fadeInNav {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
+@media (min-width: 576px) {
+  .fixed {
+    animation: fadeInNav 0.8s;
   }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
+  @keyframes fadeInNav {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
   }
 }
 
@@ -317,19 +321,20 @@ body {
   }
 }
 .navbarWrap .navbar .links-mobile-container.showModal {
-  display: block;
-  width: 100%;
   transition: all 0.5s;
-}
-.navbarWrap .navbar .links-mobile-container {
-  width: 0%;
-  height: 100vh;
-  background: white;
-  position: absolute;
+  z-index: 100;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
-  display: none;
+}
+.navbarWrap .navbar .links-mobile-container {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: -200%;
+  z-index: -10;
   transition: all 0.5s;
 }
 .navbarWrap .navbar .links-mobile-container .links-mobile {
@@ -337,6 +342,7 @@ body {
   flex-direction: column;
   align-items: center;
   list-style: none;
+  background: transparent;
 }
 @media (min-width: 576px) {
   .navbarWrap .navbar .links-mobile-container .links-mobile {
@@ -359,6 +365,7 @@ body {
   gap: 12px;
   isolation: isolate;
   position: relative;
+  background: transparent;
 }
 .navbarWrap .navbar .links-mobile-container .links-mobile .link-mobile a {
   text-decoration: none;
@@ -628,15 +635,18 @@ body {
   z-index: 1;
   animation: moveInBottom 1s ease-out;
 }
-@media (max-width: 577px) {
+@media (min-width: 320px) {
   .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained {
     padding: 10px 30px;
     font-size: 14px;
+    position: unset;
   }
 }
 @media (min-width: 768px) {
   .container .banner .leftContent .bannerButtonsWrap .bannerButtonContained {
     padding: 10px 30px;
+    font-size: 16px;
+    position: relative;
   }
 }
 @media (min-width: 1200px) {
@@ -742,11 +752,6 @@ body {
   font-weight: 400;
   font-size: 16px;
   /* identical to box height */
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  text-align: center;
   /* red-yellow-gradient */
   background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
   -webkit-background-clip: text;

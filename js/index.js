@@ -116,7 +116,7 @@ openingDivs.forEach((div, i) => {
 const left = document.querySelector(".slider_left");
 const right = document.querySelector(".slider_right");
 
-const splide = new Splide(".splide", {
+const splide = new Splide("#carousel", {
   // arrows: { prev: ".splide__arrow--prev", next: ".splide__arrow--next" },
   type: "loop",
   arrows: false,

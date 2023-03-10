@@ -92,7 +92,7 @@ closeButton.addEventListener("click", () => {
 
 // SLIDER CODES
 
-const splide = new Splide(".splide", {
+const splide = new Splide("#carousel", {
   // arrows: { prev: ".splide__arrow--prev", next: ".splide__arrow--next" },
   type: "loop",
   // arrows: false,
@@ -109,8 +109,8 @@ const splide = new Splide(".splide", {
   slideFocus: true,
   pagination: false,
   breakpoints: {
-    1920:{
-      perPage:3
+    1920: {
+      perPage: 3,
     },
     992: {
       perPage: 2,

@@ -55,7 +55,8 @@ body{
     position: fixed;
     z-index: 20;
     // transition: all  .5s;
-    animation: fadeInNav .8s;
+    @media (min-width:576px) {
+        animation: fadeInNav .8s;
     @keyframes fadeInNav {
         0%{
             transform: translateY(-50px);
@@ -66,6 +67,8 @@ body{
             opacity: 1;
         }
     }
+    }
+    
 }
 .navbarWrap{
     width: 100%;
@@ -272,19 +275,23 @@ body{
             }
         }
         .links-mobile-container.showModal{
-            display: block;
-            width: 100%;
+            // display: block;
+            // width: 100%;
             transition: all .5s;
-        }
-        .links-mobile-container{
-            width: 0%;
-            height: 100vh;
-            background: white;
-            position: absolute;
+            z-index: 100;
+            position: fixed;
             top: 0;
             left: 0;
-            z-index: 10;
-            display: none;
+        }
+        .links-mobile-container{
+            width: 100vw;
+            height: 100vh;
+            background: white;
+            position: fixed;
+            top: 0;
+            left: -200%;
+            z-index: -10;
+            // display: none;
             transition: all .5s;
             .links-mobile{
                 display: flex;
@@ -292,6 +299,7 @@ body{
                 align-items: center;
                 list-style: none;
                 // height: 100%;
+                background: transparent;
                 @media (min-width:576px) {
                     display: none;
                 }
@@ -320,6 +328,7 @@ body{
                     gap: 12px;
                     isolation: isolate;
                     position: relative;
+                    background: transparent;
                     a{
                         text-decoration: none;
                         font-family: 'Open Sans';
@@ -535,12 +544,15 @@ body{
                     position: relative;
                     z-index: 1;
                     // background: transparent;
-                    @media (max-width:577px) {
+                    @media (min-width:320px) {
                         padding: 10px 30px;
                         font-size: 14px;
+                        position: unset;
                     }
                     @media (min-width:768px){
                         padding: 10px 30px;
+                        font-size: 16px;
+                        position: relative;
                     }
                     @media (min-width:1200px) {
                         padding: 16px 48px;
@@ -651,11 +663,11 @@ body{
                         font-size: 16px;
                         // line-height: 20px;
                         /* identical to box height */
-                        position: relative;
-                        z-index: 1;
-                        display: flex;
-                        align-items: center;
-                        text-align: center;
+                        // position: relative;
+                        // z-index: 1;
+                        // display: flex;
+                        // align-items: center;
+                        // text-align: center;
 
                         /* red-yellow-gradient */
                         background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
