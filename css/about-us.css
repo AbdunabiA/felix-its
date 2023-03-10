@@ -2830,6 +2830,18 @@ body {
     font-size: 16px;
   }
 }
+.footerWrap .footer .section .list .listItem > a {
+  background: transparent;
+  text-decoration: none;
+  color: var(--white);
+}
+.footerWrap .footer .section .list .listItem > a:hover {
+  background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 .footerWrap .footer .section .list .listItem img {
   background: transparent;
   width: 8%;
@@ -2944,6 +2956,18 @@ body {
   .footerWrap .footer .section1 .list .listItem .listText {
     font-size: 16px;
   }
+}
+.footerWrap .footer .section1 .list .listItem .listText > a {
+  background: transparent;
+  text-decoration: none;
+  color: var(--white);
+}
+.footerWrap .footer .section1 .list .listItem .listText > a:hover {
+  background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 .footerWrap img {
   width: 20%;
