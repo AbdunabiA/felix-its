@@ -5,16 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felix-ITS</title>
+    <!-- styels link -->
     <link rel="stylesheet" href="./css/portfolio-view.css">
+    <!-- fonts links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- sliders links -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+    "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+    " rel="stylesheet">
+    <!-- fontawesome link -->
+    <script src="https://kit.fontawesome.com/d90799ddd3.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="header">
         <div class="topNav">
-            <!-- <img src="./images/portfolioNavCover.png" alt="img"> -->
             <div class="blackCover"></div>
             <div class="textWrap">
                 <div class="container">
@@ -32,15 +42,15 @@
                 <ul class="links">
                     <div class="link">
                         <a href="./index.html">Home</a> 
-                        <!-- <div class="line"></div> -->
+                        
                     </div>
                     <div class="link">
                         <a href="./about-us.html">About us</a> 
-                        <!-- <div class="line"></div>  -->
+                        
                     </div>
                     <div class="link">
                         <a href="./services.html">Services</a> 
-                        <!-- <div class="line"></div> -->
+                        
                     </div>
                     <div class="link">
                         <a href="./portfolio.html">Portfolio</a> 
@@ -48,13 +58,44 @@
                     </div>
                     <div class="link">
                         <a href="./contacts.html">Contacts</a> 
-                        <!-- <div class="line"></div> -->
+                        
                     </div>
                 </ul>
             </div>
             <div class="language">
-                <p class="english">English</p>
+                <select class="lanSelect" name="language" id="lan">
+                    <option class="lanItem" value="en">English</option>
+                    <option class="lanItem" value="ru">Russian</option>
+                    <option class="lanItem" value="uz">Uzbek</option>
+                </select>
+                <!-- <p class="english">English</p> -->
                 <img src="./images/flagOfAmerica.png" alt="">
+            </div>
+            <i class="fa-solid fa-bars burger"></i>
+            <div class="links-mobile-container">
+                <ul class="links-mobile">
+                    <div class="link-mobile">
+                        <a href="./index.html">Home</a> 
+                        <!-- <div class="line"></div> -->
+                    </div>
+                    <div class="link-mobile">
+                        <a href="./about-us.html">About us</a> 
+                        
+                    </div>
+                    <div class="link-mobile">
+                        <a href="./services.html">Services</a> 
+                        
+                    </div>
+                    <div class="link-mobile">
+                        <a href="./portfolio.html">Portfolio</a> 
+                        
+                    </div>
+                    <div class="link-mobile">
+                        <a href="./contacts.html">Contacts</a> 
+                        
+                    </div>
+                    <button class="closeButton">close</button>
+                </ul>
             </div>
         </div>
     </div>
@@ -63,7 +104,40 @@
         <div class="projectSection">
             <div class="left">
                 <div class="projectImgCarousel">
-                    <img src="./images/portfolio-viewLeftArrow.png" alt="">
+                    <section class="splide" aria-label="Splide Basic HTML Example"> 
+                            <div class="splide__arrows splide__arrows--rtl" style="position: absolute; right: 0; bottom: 0;">
+                            <button
+                                class="splide__arrow splide__arrow--prev"
+                                type="button"
+                                aria-label="Previous slide"
+                                aria-controls="splide01-track"
+                            >
+                                    <img src="./images/portfolio-viewLeftArrow.png" alt="">
+                            </button>
+                            <button
+                                class="splide__arrow splide__arrow--next"
+                                type="button"
+                                aria-label="Next slide"
+                                aria-controls="splide01-track"
+                            >
+                                <img src="./images/portfolio-viewRightArrow.png" alt="">
+                            </button>
+                        </div>
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img src="./images/bannerImg.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="./images/bannerImg.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="./images/bannerImg.png" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- <img src="./images/portfolio-viewLeftArrow.png" alt="">
                     <div class="carouselImg"></div>
                     <img src="./images/portfolio-viewRightArrow.png" alt="">
                     <div class="dots">
@@ -73,7 +147,7 @@
                         <img src="./images/portfolio-viewDot.png" alt="">
                         <img src="./images/portfolio-viewDot.png" alt="">
                         <img src="./images/portfolio-viewDot.png" alt="">
-                    </div>
+                    </div> -->
                 </div>
                 <div class="projectDescription">
                     <div class="overallInfo">
@@ -129,6 +203,7 @@
     </div>
 
     <div class="footerWrap">
+        <div>
         <div class="footer">
             <div class="section">
                 <h1 class="title">Services</h1>
@@ -222,6 +297,57 @@
                 <img src="./images/footerUpIcon.png" alt="">
             </div>
         </div>
+        </div>
     </div>
+    <script>
+        //THESE CODES ARE FOR GOING TO TOP PART OF THE PAGE
+        const goToTopButton = document.querySelector(".arrowWrap");
+
+        goToTopButton.addEventListener('click', ()=>{
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        })
+
+        const mobileNav = document.querySelector(".links-mobile-container");
+        const closeButton = document.querySelector(".closeButton");
+        const burger = document.querySelector(".burger");
+
+        burger.addEventListener("click", () => {
+        // mobileNav.style.display = 'block'
+        // mobileNav.style.height = '100vh'
+        mobileNav.classList.add("showModal");
+        });
+        closeButton.addEventListener("click", () => {
+        // mobileNav.style.display = 'none'
+        // mobileNav.style.height = "0vh";
+        mobileNav.classList.remove("showModal");
+        });
+
+        const splide = new Splide(".splide", {
+            type: "loop",
+            // arrows: false,
+            dragMinThreshold: 10,
+            // perMove: 1,
+            // perPage:3,
+            focus: 0,
+            gap: "24px",
+            flickPower: 500,
+            autoplay: true,
+            interval: 5000,
+            pauseOnHover: true,
+            keyboard: true,
+            slideFocus: true,
+            pagination: false,
+            // breakpoints: {
+            //     992: {
+            //     perPage: 2,
+            //     },
+            //     575: {
+            //     perPage: 1,
+            //     },
+            // },
+        });
+
+        splide.mount();
+    </script>
 </body>
 </html>
