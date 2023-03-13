@@ -450,12 +450,14 @@ body {
 }
 @media (min-width: 320px) {
   .header .navbarWrap .navbar .language .lanSelect {
+    font-size: 12px;
     padding: 2px 6px;
   }
 }
 @media (min-width: 1200px) {
   .header .navbarWrap .navbar .language .lanSelect {
-    padding: 2px 10px;
+    padding: 3px 10px;
+    font-size: 16px;
   }
 }
 .header .navbarWrap .navbar .language select::-ms-expand {
@@ -1249,6 +1251,7 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  cursor: pointer;
 }
 @media (min-width: 320px) {
   .formSection > form > button {
