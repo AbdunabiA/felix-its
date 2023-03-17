@@ -170,3 +170,36 @@ closeButton.addEventListener("click", () => {
   // mobileNav.style.height = "0vh";
   mobileNav.classList.remove("showModal");
 });
+
+
+// SELECTING LANGUAGE
+
+const currentLan = document.querySelector(".lanSelected");
+const languagesDiv = document.querySelector(".lanSelect");
+const languages = document.querySelectorAll(".lan");
+
+currentLan.addEventListener('click', ()=>{
+  languagesDiv.style.display = 'block'
+  // languagesDiv.classList.toggle('open')
+})
+
+languages.forEach((lan)=>{
+  // console.log(lan);
+  lan.addEventListener('click', (e)=>{
+    if(!e.target.classList.contains('lan')){
+      const language = e.target.parentElement.firstElementChild.textContent
+      const image =
+        e.target.parentElement.lastElementChild.getAttribute('src');  
+      currentLan.innerHTML = `<p>${language}</p> <img src='${image}'/>`;
+      languagesDiv.style.display = "none";
+      // console.log(language, image);
+    }else{
+      const language = e.target.firstElementChild.textContent;
+      const image = e.target.lastElementChild.getAttribute("src");
+      currentLan.innerHTML = `<p>${language}</p> <img src='${image}'/>`;
+      languagesDiv.style.display = "none";
+      // console.log(language, image);
+    }
+    
+  })
+})

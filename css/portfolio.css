@@ -83,6 +83,8 @@ body {
   width: 100%;
   background-image: url(../images/portfolioNavCover.png);
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 @media (min-width: 320px) {
   .header .topNav {
@@ -96,22 +98,37 @@ body {
 }
 @media (min-width: 576px) {
   .header .topNav {
-    height: 180px;
+    height: 140px;
   }
 }
 @media (min-width: 768px) {
   .header .topNav {
-    height: 240px;
+    height: 190px;
   }
 }
 @media (min-width: 992px) {
   .header .topNav {
-    height: 300px;
+    height: 250px;
   }
 }
 @media (min-width: 1200px) {
   .header .topNav {
-    height: 360px;
+    height: 300px;
+  }
+}
+@media (min-width: 1400px) {
+  .header .topNav {
+    height: 350px;
+  }
+}
+@media (min-width: 1600px) {
+  .header .topNav {
+    height: 400px;
+  }
+}
+@media (min-width: 1920px) {
+  .header .topNav {
+    height: 480px;
   }
 }
 .header .topNav > .blackCover {
@@ -972,17 +989,45 @@ body {
 }
 @media (min-width: 320px) {
   .footerWrap > div {
+    width: clamp(220px, 90%, 408px);
     gap: 20px;
+  }
+}
+@media (min-width: 428px) {
+  .footerWrap > div {
+    width: clamp(320px, 90%, 556px);
+  }
+}
+@media (min-width: 576px) {
+  .footerWrap > div {
+    width: clamp(320px, 90%, 728px);
   }
 }
 @media (min-width: 768px) {
   .footerWrap > div {
+    width: clamp(320px, 80%, 912px);
     gap: 30px;
+  }
+}
+@media (min-width: 992px) {
+  .footerWrap > div {
+    width: clamp(320px, 80%, 1100px);
   }
 }
 @media (min-width: 1200px) {
   .footerWrap > div {
+    width: clamp(320px, 80%, 1500px);
     gap: 36px;
+  }
+}
+@media (min-width: 1600px) {
+  .footerWrap > div {
+    width: clamp(320px, 70%, 1810px);
+  }
+}
+@media (min-width: 1920px) {
+  .footerWrap > div {
+    width: clamp(320px, 70%, 2360px);
   }
 }
 .footerWrap .footer {
@@ -1208,6 +1253,16 @@ body {
 .footerWrap .footer .section1 .list .listItem img {
   background: transparent;
   width: 8%;
+}
+@media (min-width: 320px) {
+  .footerWrap .footer .section1 .list .listItem img {
+    width: 5%;
+  }
+}
+@media (min-width: 992px) {
+  .footerWrap .footer .section1 .list .listItem img {
+    width: 8%;
+  }
 }
 .footerWrap .footer .section1 .list .listItem .listText {
   background: transparent;

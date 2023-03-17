@@ -65,6 +65,8 @@ body{
         width: 100%;
         background-image: url(../images/services-pageNavBg.png);
         background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: contain;
         @media (min-width:320px) {
             height: 80px;
         }
@@ -72,16 +74,25 @@ body{
             height: 120px;
         }
         @media (min-width:576px) {
-            height: 180px;
+            height: 140px;
         }
         @media (min-width:768px) {
-            height: 240px;
+            height: 190px;
         }
         @media (min-width:992px) {
-            height: 300px;
+            height: 250px;
         }
         @media (min-width:1200px) {
-            height: 360px;
+            height: 300px;
+        }
+        @media (min-width:1400px) {
+            height: 350px;
+        }
+        @media (min-width:1600px) {
+            height: 400px;
+        }
+        @media (min-width:1920px) {
+            height: 480px;
         }
         >.blackCover{
             width: 100%;
@@ -922,6 +933,21 @@ body{
         .right{
             width: 100%;
             background: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 36px;
+            @media (min-width:320px) {
+                gap: 20px;
+            }
+            @media (min-width:768px) {
+                gap: 30px;
+            }
+            @media (min-width:1200px) {
+                gap: 36px;
+            }
             >.title{
                 font-family: 'Montserrat';
                 font-style: normal;
@@ -1078,13 +1104,31 @@ body{
             background: transparent;
             gap: 36px;
             @media (min-width:320px) {
+                width: clamp(220px, 90%, 408px);
                 gap: 20px;
             }
-            @media (min-width:768px) {
+            @media (min-width:428px){
+                width: clamp(320px, 90%, 556px);
+            }
+            @media (min-width:576px){
+                width: clamp(320px, 90%, 728px);
+            }
+            @media (min-width:768px){
+                width: clamp(320px, 80%, 912px);
                 gap: 30px;
             }
+            @media (min-width:992px){
+                width: clamp(320px, 80%, 1100px);
+            }
             @media (min-width:1200px) {
+                width: clamp(320px, 80%, 1500px);
                 gap: 36px;
+            }
+            @media (min-width:1600px){
+                width: clamp(320px, 70%, 1810px);
+            }
+            @media (min-width:1920px) {
+                width: clamp(320px, 70%, 2360px);
             }
         }
         .footer{
@@ -1278,7 +1322,12 @@ body{
                         img{
                             background: transparent;
                             width: 8%;
-
+                            @media (min-width:320px) {
+                                width: 5%;
+                            }
+                            @media (min-width:992px) {
+                                width: 8%;
+                            }
                         }
                         .listText{
                             background: transparent;

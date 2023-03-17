@@ -275,7 +275,20 @@ body {
   justify-content: flex-end;
   align-items: center;
   gap: 12px;
+  position: relative;
   /* For IE10 */
+}
+.navbarWrap .navbar .language .lanSelected {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
 }
 .navbarWrap .navbar .language .lanSelect {
   font-family: "Open Sans";
@@ -283,6 +296,10 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
   /* or 19px */
   letter-spacing: 0.032em;
   border: none;
@@ -296,26 +313,44 @@ body {
 @media (min-width: 320px) {
   .navbarWrap .navbar .language .lanSelect {
     font-size: 12px;
-    padding: 2px 6px;
   }
 }
 @media (min-width: 1200px) {
   .navbarWrap .navbar .language .lanSelect {
-    padding: 3px 10px;
     font-size: 16px;
   }
 }
-.navbarWrap .navbar .language select::-ms-expand {
-  display: none;
+.navbarWrap .navbar .language .lanSelect .lan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  transition: all 250ms linear;
 }
-.navbarWrap .navbar .language .english {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 120%;
-  /* or 19px */
-  letter-spacing: 0.032em;
+.navbarWrap .navbar .language .lanSelect .lan > p {
+  background: transparent;
+}
+.navbarWrap .navbar .language .lanSelect .lan > img {
+  background: transparent;
+}
+.navbarWrap .navbar .language .lanSelect .lan:hover {
+  background: var(--red-yellow-gradient);
+}
+.navbarWrap .navbar .language .lanSelect .lan:hover > p {
+  color: var(--white);
+}
+@media (min-width: 320px) {
+  .navbarWrap .navbar .language .lanSelect .lan {
+    margin-top: 0px;
+  }
+}
+@media (min-width: 1200px) {
+  .navbarWrap .navbar .language .lanSelect .lan {
+    margin-top: 10px;
+  }
 }
 @media (min-width: 576px) {
   .navbarWrap .navbar .burger {
@@ -1176,9 +1211,15 @@ body {
   gap: 24px;
   margin-top: 100px;
 }
-@media (max-width: 577px) {
+@media (min-width: 320px) {
   .container .statisticsWrap {
     margin-top: 20px;
+    flex-direction: column;
+  }
+}
+@media (min-width: 576px) {
+  .container .statisticsWrap {
+    flex-direction: row;
   }
 }
 @media (min-width: 768px) {
@@ -1308,6 +1349,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+  width: 100%;
 }
 @media (max-width: 577px) {
   .container .servicesWrap .servicesContainer {
@@ -1317,42 +1359,125 @@ body {
 .container .servicesWrap .servicesContainer .service {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 200px;
   cursor: pointer;
+}
+@media (min-width: 320px) {
+  .container .servicesWrap .servicesContainer .service {
+    height: 120px;
+  }
+}
+@media (min-width: 482px) {
+  .container .servicesWrap .servicesContainer .service {
+    height: 150px;
+  }
+}
+@media (min-width: 576px) {
+  .container .servicesWrap .servicesContainer .service {
+    height: 165px;
+  }
+}
+@media (min-width: 768px) {
+  .container .servicesWrap .servicesContainer .service {
+    height: 120px;
+  }
+}
+@media (min-width: 992px) {
+  .container .servicesWrap .servicesContainer .service {
+    height: 150px;
+  }
+}
+@media (min-width: 1400px) {
+  .container .servicesWrap .servicesContainer .service {
+    height: 200px;
+  }
 }
 .container .servicesWrap .servicesContainer .service > img {
   width: 100%;
-  object-fit: contain;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
 }
-.container .servicesWrap .servicesContainer .service .hiddenTextWrap {
+.container .servicesWrap .servicesContainer .service .serviceInfo {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.6);
-  transition: all 0.5s;
-  padding: 16px;
-  opacity: 0;
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 24px 16px;
+  transition: all 250ms ease-in-out;
+  z-index: 2;
+  cursor: pointer;
 }
-@media (max-width: 577px) {
-  .container .servicesWrap .servicesContainer .service .hiddenTextWrap {
-    padding: 12px;
+@media (min-width: 320px) {
+  .container .servicesWrap .servicesContainer .service .serviceInfo {
+    padding: 12px 8px;
   }
 }
-.container .servicesWrap .servicesContainer .service .hiddenText {
+@media (min-width: 482px) {
+  .container .servicesWrap .servicesContainer .service .serviceInfo {
+    padding: 16px 10px;
+  }
+}
+@media (min-width: 768px) {
+  .container .servicesWrap .servicesContainer .service .serviceInfo {
+    padding: 12px 8px;
+  }
+}
+@media (min-width: 1200px) {
+  .container .servicesWrap .servicesContainer .service .serviceInfo {
+    padding: 16px 10px;
+  }
+}
+@media (min-width: 1400px) {
+  .container .servicesWrap .servicesContainer .service .serviceInfo {
+    padding: 24px 16px;
+  }
+}
+.container .servicesWrap .servicesContainer .service .serviceInfo:hover {
+  background: rgba(31, 31, 31, 0.76);
+  gap: 12px;
+}
+.container .servicesWrap .servicesContainer .service .serviceInfo:hover .hiddenText {
+  height: 100%;
+}
+.container .servicesWrap .servicesContainer .service .serviceInfo:hover .buttonContained {
+  padding: 0;
   background: transparent;
-  font-family: "Montserrat";
+  box-shadow: 0px 4px 8px rgba(114, 114, 114, 0);
+  font-weight: 600;
+  font-size: 20px;
+  padding: 2px 0px;
+}
+.container .servicesWrap .servicesContainer .service .hiddenText {
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.032em;
+  text-transform: capitalize;
   color: var(--white);
-  margin-top: 30px;
+  background: transparent;
+  overflow: hidden;
+  transition: all 250ms ease-in-out;
+  height: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 @media (min-width: 320px) {
   .container .servicesWrap .servicesContainer .service .hiddenText {
     font-size: 10px;
-    margin-top: 8%;
   }
 }
 @media (min-width: 482px) {
@@ -1363,7 +1488,6 @@ body {
 @media (min-width: 576px) {
   .container .servicesWrap .servicesContainer .service .hiddenText {
     font-size: 12px;
-    margin-top: 6%;
   }
 }
 @media (min-width: 768px) {
@@ -1379,7 +1503,6 @@ body {
 @media (min-width: 1200px) {
   .container .servicesWrap .servicesContainer .service .hiddenText {
     font-size: 16px;
-    margin-top: 8%;
   }
 }
 @media (min-width: 1920px) {
@@ -1387,94 +1510,48 @@ body {
     font-size: 18px;
   }
 }
-.container .servicesWrap .servicesContainer .service:hover > .hiddenTextWrap {
-  opacity: 1;
-}
-.container .servicesWrap .servicesContainer .service:hover > .buttonContained {
-  color: var(--white);
-  background: transparent;
-  transition: all 0.5s;
-  padding: 0px;
-  font-weight: bold;
-  box-shadow: none;
-  z-index: 2;
-}
-@media (min-width: 320px) {
-  .container .servicesWrap .servicesContainer .service:hover > .buttonContained {
-    top: 10px;
-    bottom: auto;
-  }
-}
-@media (min-width: 482px) {
-  .container .servicesWrap .servicesContainer .service:hover > .buttonContained {
-    top: 10px;
-    bottom: auto;
-  }
-}
-@media (min-width: 1200px) {
-  .container .servicesWrap .servicesContainer .service:hover > .buttonContained {
-    top: 15px;
-    font-size: 18px;
-  }
-}
-@media (min-width: 1600px) {
-  .container .servicesWrap .servicesContainer .service:hover > .buttonContained {
-    top: 20px;
-  }
-}
-@media (min-width: 1920px) {
-  .container .servicesWrap .servicesContainer .service:hover > .buttonContained {
-    top: 25px;
-  }
-}
 .container .servicesWrap .servicesContainer .service .buttonContained {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border: 0;
+  width: fit-content;
+  max-width: 100%;
   padding: 6px 24px;
-  background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
+  background: var(--red-yellow-gradient);
   box-shadow: 0px 4px 8px rgba(114, 114, 114, 0.25);
+  transition: all 64ms ease-in-out;
+  cursor: pointer;
   font-family: "Montserrat";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
+  line-height: 120%;
   text-transform: capitalize;
-  transition: all 0.5s;
-  color: #FFFFFF;
-  position: absolute;
-  left: 16px;
-  bottom: 20px;
-  top: auto;
-  border: none;
+  color: var(--white);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 @media (min-width: 320px) {
   .container .servicesWrap .servicesContainer .service .buttonContained {
     font-size: 12px;
-    left: 12px;
-    bottom: 16px;
-    padding: 3px 12px;
   }
 }
 @media (min-width: 482px) {
   .container .servicesWrap .servicesContainer .service .buttonContained {
     font-size: 14px;
-    padding: 4px 18px;
   }
 }
 @media (min-width: 768px) {
   .container .servicesWrap .servicesContainer .service .buttonContained {
     font-size: 12px;
-    left: 15px;
-    bottom: 14px;
   }
 }
 @media (min-width: 992px) {
   .container .servicesWrap .servicesContainer .service .buttonContained {
     font-size: 16px;
-    left: 16px;
-    bottom: 20px;
-    padding: 6px 24px;
   }
 }
 .container .offersWrap {
@@ -2116,6 +2193,7 @@ body {
   padding-bottom: 20px;
   gap: 36px;
   margin-top: 100px;
+  width: 100%;
 }
 @media (max-width: 577px) {
   .container .portfolioWrap {
@@ -2246,102 +2324,133 @@ body {
 }
 .container .portfolioWrap .projectsList > a {
   text-decoration: none;
-  overflow: hidden;
-  position: relative;
-}
-.container .portfolioWrap .projectsList .project {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
   isolation: isolate;
   border: 2px solid rgba(10, 38, 64, 0.04);
-  transition: all 0.5s;
+  width: 100%;
+  height: 454px;
+  transition: all 200ms ease-in-out;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
 }
-.container .portfolioWrap .projectsList .project > img {
-  width: 100%;
-  transition: all 0.5s;
+@media (min-width: 320px) {
+  .container .portfolioWrap .projectsList > a {
+    height: 390px;
+  }
+}
+@media (min-width: 482px) {
+  .container .portfolioWrap .projectsList > a {
+    height: 410px;
+  }
+}
+@media (min-width: 768px) {
+  .container .portfolioWrap .projectsList > a {
+    height: 425px;
+  }
+}
+@media (min-width: 1200px) {
+  .container .portfolioWrap .projectsList > a {
+    height: 454px;
+  }
 }
 @media (min-width: 992px) {
-  .container .portfolioWrap .projectsList .project:hover > img {
-    position: absolute;
+  .container .portfolioWrap .projectsList > a:hover > .image {
     height: 100%;
-    transition: all 0.5s;
   }
-  .container .portfolioWrap .projectsList .project:hover > .descriptionWrap {
-    position: absolute;
-    width: 100%;
+  .container .portfolioWrap .projectsList > a:hover > .blackOverlay {
+    width: 500px;
+    height: 500px;
+    left: calc(50% - 250px);
+    bottom: calc(50% - 250px);
+    opacity: 0.76;
+  }
+  .container .portfolioWrap .projectsList > a:hover > .descriptionWrap {
+    padding-top: 16px;
     height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background: transparent;
   }
-  .container .portfolioWrap .projectsList .project:hover > .descriptionWrap .description, .container .portfolioWrap .projectsList .project:hover > .descriptionWrap .title, .container .portfolioWrap .projectsList .project:hover > .descriptionWrap .buttonWrap > .text {
+  .container .portfolioWrap .projectsList > a:hover > .descriptionWrap > div:nth-child(1) .title, .container .portfolioWrap .projectsList > a:hover > .descriptionWrap > div:nth-child(1) .description {
     color: var(--white);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
   }
-  .container .portfolioWrap .projectsList .project:hover .blackOverlay {
-    height: 200%;
-    width: 120%;
-    border-radius: 10px;
+  .container .portfolioWrap .projectsList > a:hover > .descriptionWrap > div:nth-child(1) .title {
+    -webkit-line-clamp: 4;
   }
-  .container .portfolioWrap .projectsList .project:hover .blackOverlayContainer {
-    height: 200%;
+  .container .portfolioWrap .projectsList > a:hover > .descriptionWrap > div:nth-child(1) .description {
+    -webkit-line-clamp: 8;
   }
-  .container .portfolioWrap .projectsList .project:hover .orangeIconOnHover {
-    filter: invert(88%) sepia(99%) saturate(2476%) hue-rotate(0deg) brightness(100%) contrast(99%);
+  .container .portfolioWrap .projectsList > a:hover > .descriptionWrap > .buttonWrap {
+    padding: 8px 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: var(--red-yellow-gradient) 1;
   }
-  .container .portfolioWrap .projectsList .project:hover .buttonWrap {
-    border: var(--yellow) solid 1px;
-    position: absolute;
-    bottom: 16px;
-    left: 12px;
-  }
-  .container .portfolioWrap .projectsList .project:hover .text {
+  .container .portfolioWrap .projectsList > a:hover > .descriptionWrap > .buttonWrap > .text {
     background: linear-gradient(270deg, #FF8A26 0%, #FF481F 74.08%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
   }
-}
-@media (min-width: 992px) and (max-width: 577px) {
-  .container .portfolioWrap .projectsList .project:hover .text {
-    font-size: 14px;
+  .container .portfolioWrap .projectsList > a:hover .orangeIconOnHover {
+    filter: invert(88%) sepia(99%) saturate(2476%) hue-rotate(0deg) brightness(100%) contrast(99%);
   }
 }
-@media (min-width: 992px) {
-  .container .portfolioWrap .projectsList .project .blackOverlayContainer {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    position: absolute;
-    bottom: 0;
-    justify-content: center;
-    transition: all 3s;
-    height: 0px;
-    background: transparent;
-  }
+.container .portfolioWrap .projectsList > a .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 1;
+  transition: all 200ms ease-in-out;
 }
-.container .portfolioWrap .projectsList .project .blackOverlay {
-  background: rgba(0, 0, 0, 0.7);
-  position: relative;
-  bottom: -10px;
-  border-radius: 100%;
-  height: 0px;
-  width: 0px;
-  transition: all 0.5s;
+.container .portfolioWrap .projectsList > a .image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.container .portfolioWrap .projectsList .project .descriptionWrap {
+.container .portfolioWrap .projectsList > a .blackOverlay {
+  position: absolute;
+  left: calc(50% - 24px);
+  bottom: -48px;
+  width: 48px;
+  height: 48px;
+  background: var(--dark);
+  border-radius: 150px;
+  opacity: 0.64;
+  transition: all 200ms ease-in-out;
+  z-index: 2;
+}
+.container .portfolioWrap .projectsList > a .descriptionWrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  height: 100%;
+  padding: 16px 12px;
+  padding-top: 216px;
+  transition: all 200ms ease-in-out;
+  z-index: 3;
+  background: transparent;
+}
+.container .portfolioWrap .projectsList > a .descriptionWrap > div:nth-child(1) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 16px 12px;
   gap: 16px;
-  transition: all 0.5s ease-in-out;
+  background: transparent;
 }
-.container .portfolioWrap .projectsList .project .descriptionWrap .title {
+.container .portfolioWrap .projectsList > a .descriptionWrap > div:nth-child(1) .title {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
@@ -2352,23 +2461,27 @@ body {
   /* dark-500 */
   color: #1F1F1F;
   background: transparent;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 @media (min-width: 320px) {
-  .container .portfolioWrap .projectsList .project .descriptionWrap .title {
+  .container .portfolioWrap .projectsList > a .descriptionWrap > div:nth-child(1) .title {
     font-size: 16px;
   }
 }
 @media (min-width: 992px) {
-  .container .portfolioWrap .projectsList .project .descriptionWrap .title {
+  .container .portfolioWrap .projectsList > a .descriptionWrap > div:nth-child(1) .title {
     font-size: 20px;
   }
 }
 @media (min-width: 1200px) {
-  .container .portfolioWrap .projectsList .project .descriptionWrap .title {
+  .container .portfolioWrap .projectsList > a .descriptionWrap > div:nth-child(1) .title {
     font-size: 24px;
   }
 }
-.container .portfolioWrap .projectsList .project .descriptionWrap .description {
+.container .portfolioWrap .projectsList > a .descriptionWrap > div:nth-child(1) .description {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
@@ -2378,32 +2491,37 @@ body {
   /* dark-500 */
   color: #1F1F1F;
   background: transparent;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 @media (min-width: 320px) {
-  .container .portfolioWrap .projectsList .project .descriptionWrap .description {
+  .container .portfolioWrap .projectsList > a .descriptionWrap > div:nth-child(1) .description {
     font-size: 12px;
   }
 }
 @media (min-width: 768px) {
-  .container .portfolioWrap .projectsList .project .descriptionWrap .description {
+  .container .portfolioWrap .projectsList > a .descriptionWrap > div:nth-child(1) .description {
     font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
-  .container .portfolioWrap .projectsList .project .descriptionWrap .description {
+  .container .portfolioWrap .projectsList > a .descriptionWrap > div:nth-child(1) .description {
     font-size: 16px;
   }
 }
-.container .portfolioWrap .projectsList .project .descriptionWrap .buttonWrap {
+.container .portfolioWrap .projectsList > a .descriptionWrap .buttonWrap {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px 8px;
+  padding: 8px 0px;
   gap: 12px;
   background: transparent;
+  transition: all 200ms ease-in-out;
 }
-.container .portfolioWrap .projectsList .project .descriptionWrap .buttonWrap .text {
+.container .portfolioWrap .projectsList > a .descriptionWrap .buttonWrap .text {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
@@ -2411,23 +2529,24 @@ body {
   /* identical to box height */
   /* blue-900 */
   color: #332694;
+  background: transparent;
 }
 @media (min-width: 320px) {
-  .container .portfolioWrap .projectsList .project .descriptionWrap .buttonWrap .text {
+  .container .portfolioWrap .projectsList > a .descriptionWrap .buttonWrap .text {
     font-size: 12px;
   }
 }
 @media (min-width: 768px) {
-  .container .portfolioWrap .projectsList .project .descriptionWrap .buttonWrap .text {
+  .container .portfolioWrap .projectsList > a .descriptionWrap .buttonWrap .text {
     font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
-  .container .portfolioWrap .projectsList .project .descriptionWrap .buttonWrap .text {
+  .container .portfolioWrap .projectsList > a .descriptionWrap .buttonWrap .text {
     font-size: 16px;
   }
 }
-.container .portfolioWrap .projectsList .project .descriptionWrap .buttonWrap .orangeIconOnHover {
+.container .portfolioWrap .projectsList > a .descriptionWrap .buttonWrap .orangeIconOnHover {
   background: transparent;
 }
 .container .portfolioWrap .button {
@@ -2526,6 +2645,46 @@ body {
   gap: 36px;
   isolation: isolate;
   background: transparent;
+}
+@media (min-width: 320px) {
+  .customersOpinionWrap > div {
+    width: clamp(220px, 90%, 408px);
+  }
+}
+@media (min-width: 428px) {
+  .customersOpinionWrap > div {
+    width: clamp(320px, 90%, 556px);
+  }
+}
+@media (min-width: 576px) {
+  .customersOpinionWrap > div {
+    width: clamp(320px, 90%, 728px);
+  }
+}
+@media (min-width: 768px) {
+  .customersOpinionWrap > div {
+    width: clamp(320px, 80%, 912px);
+  }
+}
+@media (min-width: 992px) {
+  .customersOpinionWrap > div {
+    width: clamp(320px, 80%, 1100px);
+  }
+}
+@media (min-width: 1200px) {
+  .customersOpinionWrap > div {
+    width: clamp(320px, 80%, 1500px);
+  }
+}
+@media (min-width: 1600px) {
+  .customersOpinionWrap > div {
+    width: clamp(320px, 70%, 1810px);
+  }
+}
+@media (min-width: 1920px) {
+  .customersOpinionWrap > div {
+    width: clamp(320px, 70%, 2360px);
+  }
 }
 .customersOpinionWrap > div .textWrap {
   display: flex;
@@ -2666,11 +2825,6 @@ body {
 @media (min-width: 576px) {
   .customersOpinionWrap > div .carouselWrap {
     width: 100%;
-  }
-}
-@media (min-width: 1920px) {
-  .customersOpinionWrap > div .carouselWrap {
-    width: 80%;
   }
 }
 .customersOpinionWrap > div .carouselWrap .splide {
@@ -3120,17 +3274,45 @@ body {
 }
 @media (min-width: 320px) {
   .footerWrap > div {
+    width: clamp(220px, 90%, 408px);
     gap: 20px;
+  }
+}
+@media (min-width: 428px) {
+  .footerWrap > div {
+    width: clamp(320px, 90%, 556px);
+  }
+}
+@media (min-width: 576px) {
+  .footerWrap > div {
+    width: clamp(320px, 90%, 728px);
   }
 }
 @media (min-width: 768px) {
   .footerWrap > div {
+    width: clamp(320px, 80%, 912px);
     gap: 30px;
+  }
+}
+@media (min-width: 992px) {
+  .footerWrap > div {
+    width: clamp(320px, 80%, 1100px);
   }
 }
 @media (min-width: 1200px) {
   .footerWrap > div {
+    width: clamp(320px, 80%, 1500px);
     gap: 36px;
+  }
+}
+@media (min-width: 1600px) {
+  .footerWrap > div {
+    width: clamp(320px, 70%, 1810px);
+  }
+}
+@media (min-width: 1920px) {
+  .footerWrap > div {
+    width: clamp(320px, 70%, 2360px);
   }
 }
 .footerWrap .footer {
@@ -3356,6 +3538,16 @@ body {
 .footerWrap .footer .section1 .list .listItem img {
   background: transparent;
   width: 8%;
+}
+@media (min-width: 320px) {
+  .footerWrap .footer .section1 .list .listItem img {
+    width: 5%;
+  }
+}
+@media (min-width: 992px) {
+  .footerWrap .footer .section1 .list .listItem img {
+    width: 8%;
+  }
 }
 .footerWrap .footer .section1 .list .listItem .listText {
   background: transparent;

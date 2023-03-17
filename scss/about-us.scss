@@ -69,6 +69,8 @@ body{
         width: 100%;
         background-image: url(../images/about-usNavCover.png);
         background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: contain;
         @media (min-width:320px) {
             height: 80px;
         }
@@ -76,16 +78,25 @@ body{
             height: 120px;
         }
         @media (min-width:576px) {
-            height: 180px;
+            height: 140px;
         }
         @media (min-width:768px) {
-            height: 240px;
+            height: 190px;
         }
         @media (min-width:992px) {
-            height: 300px;
+            height: 250px;
         }
         @media (min-width:1200px) {
-            height: 360px;
+            height: 300px;
+        }
+        @media (min-width:1400px) {
+            height: 350px;
+        }
+        @media (min-width:1600px) {
+            height: 400px;
+        }
+        @media (min-width:1920px) {
+            height: 480px;
         }
         >.blackCover{
             width: 100%;
@@ -629,13 +640,7 @@ body{
                 color: var(--white);
                 background: transparent;
                 @media (min-width:320px) {
-                    font-size: 13px;
-                }
-                @media (min-width:482px) {
-                    font-size: 14px;
-                }
-                @media (min-width:576px) {
-                    font-size: 15px;
+                    font-size: 16px;
                 }
                 @media (min-width:768px) {
                     font-size: 16px;
@@ -775,12 +780,9 @@ body{
                             background-clip: text;
                             text-fill-color: transparent;
                             @media (min-width:320px) {
-                                font-size: 14px;
-                            }
-                            @media (min-width:482px) {
                                 font-size: 16px;
                             }
-                            @media (min-width:576px) {
+                            @media (min-width:482px) {
                                 font-size: 18px;
                             }
                             @media (min-width:768px) {
@@ -808,13 +810,10 @@ body{
                             background: transparent;
                             color: var(--white);
                             @media (min-width:320px) {
-                                font-size: 11px;
+                                font-size: 14px;
                             }
                             @media (min-width:482px) {
-                                font-size: 12px;
-                            }
-                            @media (min-width:576px) {
-                                font-size: 13px;
+                                font-size: 16px;
                             }
                             @media (min-width:768px) {
                                 font-size: 12px;
@@ -2209,13 +2208,31 @@ body{
             background: transparent;
             gap: 36px;
             @media (min-width:320px) {
+                width: clamp(220px, 90%, 408px);
                 gap: 20px;
             }
-            @media (min-width:768px) {
+            @media (min-width:428px){
+                width: clamp(320px, 90%, 556px);
+            }
+            @media (min-width:576px){
+                width: clamp(320px, 90%, 728px);
+            }
+            @media (min-width:768px){
+                width: clamp(320px, 80%, 912px);
                 gap: 30px;
             }
+            @media (min-width:992px){
+                width: clamp(320px, 80%, 1100px);
+            }
             @media (min-width:1200px) {
+                width: clamp(320px, 80%, 1500px);
                 gap: 36px;
+            }
+            @media (min-width:1600px){
+                width: clamp(320px, 70%, 1810px);
+            }
+            @media (min-width:1920px) {
+                width: clamp(320px, 70%, 2360px);
             }
         }
         .footer{
@@ -2409,6 +2426,12 @@ body{
                         img{
                             background: transparent;
                             width: 8%;
+                            @media (min-width:320px) {
+                                width: 5%;
+                            }
+                            @media (min-width:992px) {
+                                width: 8%;
+                            }
 
                         }
                         .listText{
